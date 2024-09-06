@@ -1,4 +1,4 @@
-from typing import Dict, NamedTuple, Optional
+from typing import Dict, NamedTuple, Callable, Optional
 
 from BaseClasses import Location
 
@@ -9,14 +9,16 @@ class HereComesNikoLocation(Location):
 
 class HereComesNikoLocationData(NamedTuple):
     region: str
-    id: int
+    id: Optional[int] = None
+    can_create: Callable = lambda options: True
+    locked_item: Optional[str] = None
 
 base_id = 598_145_444_000
 
 coin_location_table: Dict[str, HereComesNikoLocationData] = {
     "Give High Frog Lunchbox": HereComesNikoLocationData("Home", base_id + 0),
     "Letter near crane": HereComesNikoLocationData("Home", base_id + 1),
-    "Get hired": HereComesNikoLocationData("Home", base_id + 2),
+    #"Get hired": HereComesNikoLocationData("Home", base_id + 2, locked_item="Victory"),
     "Win BIG VOLLEY (HC)": HereComesNikoLocationData("Hairball City", base_id + 3),
     "Dustan on lighthouse": HereComesNikoLocationData("Hairball City", base_id + 4),
     "Gabi's Flowers (HC)": HereComesNikoLocationData("Hairball City", base_id + 5),
@@ -95,7 +97,12 @@ coin_location_table: Dict[str, HereComesNikoLocationData] = {
     #"": HereComesNikoLocationData("Home", base_id + 78),
     #"": HereComesNikoLocationData("Home", base_id + 79),
     #"": HereComesNikoLocationData("Home", base_id + 80),
+    "Get hired": HereComesNikoLocationData("Home", locked_item="Victory")
 }
+
+location_table = {name: data.id for name, data in coin_location_table.items() if data.id is not None}
+id_to_location_table = {data.id: name for name, data in coin_location_table.items() if data.id is not None}
+locked_locations = {name: data for name, data in coin_location_table.items() if data.locked_item}
 
 
 

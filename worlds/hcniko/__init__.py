@@ -1,20 +1,86 @@
-from BaseClasses import Item, ItemClassification, Region
-from worlds.AutoWorld import World
-from .items import item_data_table
-from .locations import coin_location_table
+from typing import List, Dict
+
+from BaseClasses import Region, Tutorial
+from worlds.AutoWorld import World, WebWorld
+from .items import item_data_table, HereComesNikoItem, item_table
+from .locations import coin_location_table, HereComesNikoLocation, locked_locations, location_table
+from .regions import region_data_table
+
+
+class HereComesNikoWebWorld(WebWorld):
+    theme = "partyTime"
+
+    setup_en = Tutorial(
+        tutorial_name="Start Guide",
+        description="A guide to playing Here Comes Niko! in Archipelago.",
+        language="English",
+        file_name="guide_en.md",
+        link="guide/en",
+        authors=["nieli"]
+    )
+
+    tutorials = [setup_en]
 
 
 class HereComesNikoWorld(World):
+    """A cozy little game, help"""
+
     game = "Here Comes Niko!"
-    location_name_to_id = coin_location_table
-    item_name_to_id = item_data_table
+    data_version = 1
+    web = HereComesNikoWebWorld()
+    location_name_to_id = location_table
+    item_name_to_id = item_table
 
+    def generate_early(self):
+        pass
 
-    def create_regions(self):
-        region = Region("Home", self.player, self.multiworld)
-        region.add_locations(self.location_name_to_id)
-        self.multiworld.regions.append(region)
+    def create_item(self, name: str) -> HereComesNikoItem:
+        return HereComesNikoItem(name, item_data_table[name].type, item_data_table[name].id, self.player)
 
-    def create_items(self):
-        coin_item = Item("Coin", ItemClassification.progression, 598_145_444_000, self.player)
-        self.multiworld.itempool.append(coin_item)
+    def create_items(self) -> None:
+        mw = self.multiworld
+
+        item_pool: List[HereComesNikoItem] = []
+        item_pool_count: Dict[str, int] = {}
+        for name, item in item_data_table.items():
+            item_pool_count[name] = 0
+            if item.id and item.can_create(self.options):
+                while item_pool_count[name] < item.num_exist:
+                    item_pool.append(self.create_item(name))
+                    item_pool_count[name] += 1
+
+        mw.itempool += item_pool
+
+    def create_regions(self) -> None:
+        player = self.player
+        mw = self.multiworld
+
+        for region_name in region_data_table.keys():
+            region = Region(region_name, player, mw)
+            mw.regions.append(region)
+
+        for region_name, region_data in region_data_table.items():
+            region = mw.get_region(region_name, player)
+            region.add_locations({
+                location_name: location_data.id for location_name, location_data in coin_location_table.items()
+                if location_data.region == region_name and location_data.can_create(self.options)
+            }, HereComesNikoLocation)
+            region.add_exits(region_data.connecting_regions)
+
+            # Place locked locations
+            for location_name, location_data in locked_locations.items():
+                # Ignore locations we never created.
+                if not location_data.can_create(self.options):
+                    continue
+
+                locked_item = self.create_item(coin_location_table[location_name].locked_item)
+                mw.get_location(location_name, player).place_locked_item(locked_item)
+
+    def get_filler_item_name(self) -> str:
+        return "Letter"
+
+    def set_rules(self) -> None:
+        player = self.player
+        mw = self.multiworld
+
+        mw.completion_condition[player] = lambda state: state.has("Victory", player)
