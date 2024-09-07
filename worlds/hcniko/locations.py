@@ -111,18 +111,17 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Letter end of 2D section": HereComesNikoLocationData("Public Pool", base_id + 88),
     "Letter behind axolotl family": HereComesNikoLocationData("Bathhouse", base_id + 89),
     "Letter near Game Kid": HereComesNikoLocationData("Bathhouse", base_id + 90),
-    #"Letter near crane": HereComesNikoLocationData("Home", base_id + 91),
 
     # Keys
-    "Key inside container": HereComesNikoLocationData("Turbine Town", base_id + 191),
-    "Key on tall island": HereComesNikoLocationData("Turbine Town", base_id + 192),
-    "Key on rock in ocean": HereComesNikoLocationData("Salmon Creek Forest", base_id + 193),
-    "Key in pond": HereComesNikoLocationData("Salmon Creek Forest", base_id + 194),
-    "Key near SPORTVIVAL": HereComesNikoLocationData("Salmon Creek Forest", base_id + 195),
-    "Key over breakable box": HereComesNikoLocationData("Public Pool", base_id + 196),
-    "Key on torii": HereComesNikoLocationData("Bathhouse", base_id + 197),
-    "Key near bathhouse box": HereComesNikoLocationData("Bathhouse", base_id + 198),
-    "Key under Moomy": HereComesNikoLocationData("Bathhouse", base_id + 199),
+    "Key inside container": HereComesNikoLocationData("Turbine Town", base_id + 91),
+    "Key on tall island": HereComesNikoLocationData("Turbine Town", base_id + 92),
+    "Key on rock in ocean": HereComesNikoLocationData("Salmon Creek Forest", base_id + 93),
+    "Key in pond": HereComesNikoLocationData("Salmon Creek Forest", base_id + 94),
+    "Key near SPORTVIVAL": HereComesNikoLocationData("Salmon Creek Forest", base_id + 95),
+    "Key over breakable box": HereComesNikoLocationData("Public Pool", base_id + 96),
+    "Key on torii": HereComesNikoLocationData("Bathhouse", base_id + 97),
+    "Key near bathhouse box": HereComesNikoLocationData("Bathhouse", base_id + 98),
+    "Key under Moomy": HereComesNikoLocationData("Bathhouse", base_id + 99),
 
     # Cassettes
     "Cassette Behind Pepper": HereComesNikoLocationData("Hairball City", base_id+100),
@@ -204,9 +203,11 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
 
     # Misc
     "Give 250 Apples to Dojo guy": HereComesNikoLocationData("Tadpole HQ", base_id + 166),
+    "Contact List 1": HereComesNikoLocationData("Salmon Creek Forest", base_id + 167),
+    "Contact List 2": HereComesNikoLocationData("Tadpole HQ", base_id + 168),
 
     # Victory
-    "You're hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
+    #"You're hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
 }
 
 location_table = {name: data.id for name, data in location_data_table.items() if data.id is not None}

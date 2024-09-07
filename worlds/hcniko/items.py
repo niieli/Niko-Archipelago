@@ -23,6 +23,7 @@ item_data_table: Dict[str, HereComesNikoItemData] = {
     "Contact List 1": HereComesNikoItemData(base_id+4, type=ItemClassification.progression, num_exist=1),
     "Contact List 2": HereComesNikoItemData(base_id+5, type=ItemClassification.progression, num_exist=1),
     "Super Jump": HereComesNikoItemData(base_id+6, type=ItemClassification.useful, num_exist=1),
+    "50 Apples": HereComesNikoItemData(base_id+7, type=ItemClassification.filler),
     "Victory": HereComesNikoItemData(type=ItemClassification.progression, can_create=lambda options: False)
 }
 

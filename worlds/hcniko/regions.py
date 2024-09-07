@@ -6,6 +6,7 @@ class HereComesNikoRegionData(NamedTuple):
 
 
 region_data_table: Dict[str, HereComesNikoRegionData] = {
+    "Menu": HereComesNikoRegionData(["Home"]),
     "Home": HereComesNikoRegionData(["Hairball City"]),
     "Hairball City": HereComesNikoRegionData(["Turbine Town"]),
     "Turbine Town": HereComesNikoRegionData(["Salmon Creek Forest"]),

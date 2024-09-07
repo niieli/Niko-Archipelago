@@ -82,14 +82,14 @@ class HereComesNikoWorld(World):
                 mw.get_location(location_name, player).place_locked_item(locked_item)
 
     def get_filler_item_name(self) -> str:
-        return "Letter"
+        return "Letter", ""
 
     def set_rules(self) -> None:
         player = self.player
         mw = self.multiworld
 
         # Complete condition
-        mw.completion_condition[player] = lambda state: state.has("Victory", player)
+        #mw.completion_condition[player] = lambda state: state.has("Victory", player)
 
         region_rules = get_region_rules(player)
         for entrance_name, rule in region_rules.items():
