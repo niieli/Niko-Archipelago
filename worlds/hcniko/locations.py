@@ -191,6 +191,8 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Under giant umbrella": HereComesNikoLocationData("Tadpole HQ", base_id + 164),
     "Inbetween buildings": HereComesNikoLocationData("Tadpole HQ", base_id + 165),
 
+    # DLC Garden
+    # "": HereComesNikoLocationData("Gary's Garden", base_id + 163),
     # "": HereComesNikoLocationData("Gary's Garden", base_id + 163),
     # "": HereComesNikoLocationData("Gary's Garden", base_id + 163),
     # "": HereComesNikoLocationData("Gary's Garden", base_id + 163),
@@ -206,7 +208,25 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Contact List 1": HereComesNikoLocationData("Salmon Creek Forest", base_id + 167),
     "Contact List 2": HereComesNikoLocationData("Tadpole HQ", base_id + 168),
 
+    # Achievements
+    # "Frog fan": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Employee of the month!": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Bottled up": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Snail fashion show": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Volley dreams": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Hopeless romantic": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+    # "Lost at sea": HereComesNikoLocationData("Tadpole HQ", base_id + 170),
+
+    # Kiosk
+    "Home Kiosk": HereComesNikoLocationData("Home", base_id + 170),
+    "Hairball City Kiosk": HereComesNikoLocationData("Hairball City", base_id + 171),
+    "Turbine Town Kiosk": HereComesNikoLocationData("Turbine Town", base_id + 172),
+    "Salmon Creek Forest Kiosk": HereComesNikoLocationData("Salmon Creek Forest", base_id + 173),
+    "Public Pool Kiosk": HereComesNikoLocationData("Public Pool", base_id + 174),
+    "Bathhouse Kiosk": HereComesNikoLocationData("Bathhouse", base_id + 175),
+
     # Victory
+    "Job Interview": HereComesNikoLocationData("Tadpole HQ", base_id + 169),
     #"You're hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
 }
 

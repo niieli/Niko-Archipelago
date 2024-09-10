@@ -19,11 +19,22 @@ item_data_table: Dict[str, HereComesNikoItemData] = {
     "Coin": HereComesNikoItemData(base_id, type=ItemClassification.progression, num_exist=76),
     "Cassette": HereComesNikoItemData(base_id+1, type=ItemClassification.progression, num_exist=61),
     "Key": HereComesNikoItemData(base_id+2, type=ItemClassification.progression, num_exist=8),
-    "Letter": HereComesNikoItemData(base_id+3, type=ItemClassification.filler, num_exist=11),
+    #"Letter": HereComesNikoItemData(base_id+3, type=ItemClassification.filler, num_exist=11),
+    "25 Apples": HereComesNikoItemData(base_id + 3, type=ItemClassification.filler, num_exist=18),
     "Contact List 1": HereComesNikoItemData(base_id+4, type=ItemClassification.progression, num_exist=1),
     "Contact List 2": HereComesNikoItemData(base_id+5, type=ItemClassification.progression, num_exist=1),
     "Super Jump": HereComesNikoItemData(base_id+6, type=ItemClassification.useful, num_exist=1),
-    "50 Apples": HereComesNikoItemData(base_id+7, type=ItemClassification.filler),
+    #"50 Apples": HereComesNikoItemData(base_id+7, type=ItemClassification.filler),
+
+    # Levels
+    #"Home": HereComesNikoItemData(base_id + 7, type=ItemClassification.progression),
+    "Hairball City": HereComesNikoItemData(base_id + 8, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    "Turbine Town": HereComesNikoItemData(base_id + 9, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    "Salmon Creek Forest": HereComesNikoItemData(base_id + 10, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    "Public Pool": HereComesNikoItemData(base_id + 11, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    "Bathhouse": HereComesNikoItemData(base_id + 12, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    "Tadpole HQ": HereComesNikoItemData(base_id + 13, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+
     "Victory": HereComesNikoItemData(type=ItemClassification.progression, can_create=lambda options: False)
 }
 

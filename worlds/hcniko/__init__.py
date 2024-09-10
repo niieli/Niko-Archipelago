@@ -4,7 +4,7 @@ from BaseClasses import Region, Tutorial
 from worlds.AutoWorld import World, WebWorld
 from .items import item_data_table, HereComesNikoItem, item_table
 from .locations import location_data_table, HereComesNikoLocation, locked_locations, location_table
-from .options import herecomesniko_options
+from .options import *
 from .regions import region_data_table
 from .rules import *
 
@@ -30,7 +30,7 @@ class HereComesNikoWorld(World):
     game = "Here Comes Niko!"
     data_version = 1
     web = HereComesNikoWebWorld()
-    option_definitions = herecomesniko_options
+    option_definitions = hcn_options
     location_name_to_id = location_table
     item_name_to_id = item_table
 
@@ -81,8 +81,17 @@ class HereComesNikoWorld(World):
                 locked_item = self.create_item(location_data_table[location_name].locked_item)
                 mw.get_location(location_name, player).place_locked_item(locked_item)
 
+            if not HereComesNikoWorld.options.shuffle_kiosk_reward.value:
+                mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City"))
+                mw.get_location("Hairball City Kiosk", player).place_locked_item(self.create_item("Turbine Town"))
+                mw.get_location("Turbine Town Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest"))
+                mw.get_location("Salmon Creek Forest Kiosk", player).place_locked_item(self.create_item("Public Pool"))
+                mw.get_location("Public Pool Kiosk", player).place_locked_item(self.create_item("Bathhouse"))
+                mw.get_location("Bathhouse Kiosk", player).place_locked_item(self.create_item("Tadpole HQ"))
+
+
     def get_filler_item_name(self) -> str:
-        return "Letter", ""
+        return "25 Apples"
 
     def set_rules(self) -> None:
         player = self.player
