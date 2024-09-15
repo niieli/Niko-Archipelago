@@ -52,7 +52,8 @@ class HereComesNikoWorld(World):
                 while item_pool_count[name] < item.num_exist:
                     item_pool.append(self.create_item(name))
                     item_pool_count[name] += 1
-
+        total_locations = len(self.multiworld.get_unfilled_locations(self.player))
+        item_pool += [self.create_filler() for _ in range(total_locations - len(item_pool))]
         mw.itempool += item_pool
 
     def create_regions(self) -> None:
@@ -83,12 +84,12 @@ class HereComesNikoWorld(World):
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
         if not self.options.shuffle_kiosk_reward.value:
-            mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City"))
-            mw.get_location("Hairball City Kiosk", player).place_locked_item(self.create_item("Turbine Town"))
-            mw.get_location("Turbine Town Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest"))
-            mw.get_location("Salmon Creek Forest Kiosk", player).place_locked_item(self.create_item("Public Pool"))
-            mw.get_location("Public Pool Kiosk", player).place_locked_item(self.create_item("Bathhouse"))
-            mw.get_location("Bathhouse Kiosk", player).place_locked_item(self.create_item("Tadpole HQ"))
+            mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
+            mw.get_location("Hairball City Kiosk", player).place_locked_item(self.create_item("Turbine Town Ticket"))
+            mw.get_location("Turbine Town Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest Ticket"))
+            mw.get_location("Salmon Creek Forest Kiosk", player).place_locked_item(self.create_item("Public Pool Ticket"))
+            mw.get_location("Public Pool Kiosk", player).place_locked_item(self.create_item("Bathhouse Ticket"))
+            mw.get_location("Bathhouse Kiosk", player).place_locked_item(self.create_item("Tadpole HQ Ticket"))
 
     def get_filler_item_name(self) -> str:
         return "25 Apples"
@@ -114,5 +115,8 @@ class HereComesNikoWorld(World):
     def fill_slot_data(self):
         return  {
             "shuffle_kiosk_reward": self.options.shuffle_kiosk_reward.value,
+            "enable_achievements": self.options.enable_achievements.value,
+            "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
+            "shuffle_garys_garden": self.options.shuffle_garys_garden.value,
             "death_link": self.options.death_link.value
         }

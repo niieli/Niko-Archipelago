@@ -34,6 +34,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Unknown CL2_2": HereComesNikoLocationData(region="Hairball City",id=base_id + 14),
     "Unknown CL2_3": HereComesNikoLocationData(region="Hairball City",id=base_id + 15),
     "Unknown CL2_4": HereComesNikoLocationData(region="Hairball City",id=base_id + 16),
+    # ~ Turbine Town
     "Fish with Fischer (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 17),
     "Win AIR VOLLEY (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 18),
     "Gabi's Flowers (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 19),
@@ -45,6 +46,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Unknown CL1_3 (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 25),
     "Unknown CL2_1 (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 26),
     "Unknown CL2_2 (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 27),
+    # ~ Salmon Creek Forest
     "Get Stijn and Melissa together": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 28),
     "Give Mitch 5 Cassettes (SCF)": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 29),
     "Dustan on mountain": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 30),
@@ -61,6 +63,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Unknown CL2_1 (SCF)": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 41),
     "Unknown CL2_2 (SCF)": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 42),
     "Unknown CL2_3 (SCF)": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 43),
+    # ~ Public Pool
     "End of 2D section": HereComesNikoLocationData(region="Public Pool",id=base_id + 44),
     "Give Mai 5 Cassettes (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 45),
     "Help Blippy (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 46),
@@ -71,6 +74,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Unknown CL2_2 (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 51),
     "Unknown CL2_3 (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 52),
     "Unknown CL2_4 (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 53),
+    # ~ Bathhouse
     "Bring Louist to Serschel (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 54),
     "Collect all 10 seeds (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 55),
     "Help Paul": HereComesNikoLocationData(region="Bathhouse",id=base_id + 56),
@@ -85,6 +89,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Unknown CL2_3 (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 65),
     "Unknown CL2_4 (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 66),
     "Unknown CL2_5 (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 67),
+    # ~ Tadpole HQ
     "Give Mai 5 Cassettes (HQ)": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 68),
     "Give Mitch 5 Cassettes (HQ)": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 69),
     "Listen to King Frog": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 70),
@@ -131,7 +136,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Behind lighthouse": HereComesNikoLocationData(region="Hairball City",id=base_id + 107),
     "Near bench on small island": HereComesNikoLocationData(region="Hairball City",id=base_id + 108),
     "Behind frog statue (HC)": HereComesNikoLocationData(region="Hairball City",id=base_id + 109),
-    #  ~ "": HereComesNikoLocationData(region="Hairball City",id=base_id + 110),
+    #  ~ Turbine Town
     "Inside container on water": HereComesNikoLocationData(region="Turbine Town",id=base_id + 111),
     "Rocks on water": HereComesNikoLocationData(region="Turbine Town",id=base_id + 112),
     "On top of containers": HereComesNikoLocationData(region="Turbine Town",id=base_id + 113),
@@ -142,7 +147,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Next to torii gates": HereComesNikoLocationData(region="Turbine Town",id=base_id + 118),
     "Near fishing containers": HereComesNikoLocationData(region="Turbine Town",id=base_id + 119),
     "Floating above water (TT)": HereComesNikoLocationData(region="Turbine Town",id=base_id + 120),
-    #  ~ "": HereComesNikoLocationData(region="Turbine Town",id=base_id + 121),
+    #  ~ Salmon Creek Forest
     "Behind train": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 122),
     "Wooden bridge": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 123),
     "On treehouse": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 124),
@@ -154,7 +159,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Behind mountain (SCF)": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 130),
     "Next to Treeman": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 131),
     "Near hamster ball": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 132),
-    #  ~ "": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 133),
+    #  ~ Public Pool
     "Frog statue (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 134),
     "On springboard": HereComesNikoLocationData(region="Public Pool",id=base_id + 135),
     "Small island on the left": HereComesNikoLocationData(region="Public Pool",id=base_id + 136),
@@ -165,7 +170,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Palm tree (PP)": HereComesNikoLocationData(region="Public Pool",id=base_id + 141),
     "Breakable box in pool": HereComesNikoLocationData(region="Public Pool",id=base_id + 142),
     "Above BIG pool": HereComesNikoLocationData(region="Public Pool",id=base_id + 143),
-    #  ~ "": HereComesNikoLocationData(region="Public Pool",id=base_id + 144),
+    #  ~ Bathhouse
     "Frog statue butt (Bath)": HereComesNikoLocationData(region="Bathhouse",id=base_id + 145),
     "Near axolotl family in water": HereComesNikoLocationData(region="Bathhouse",id=base_id + 146),
     "Hut in water": HereComesNikoLocationData(region="Bathhouse",id=base_id + 147),
@@ -176,7 +181,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Fan to fan": HereComesNikoLocationData(region="Bathhouse",id=base_id + 152),
     "On pipes": HereComesNikoLocationData(region="Bathhouse",id=base_id + 153),
     "Mahjong hideout": HereComesNikoLocationData(region="Bathhouse",id=base_id + 154),
-    #  ~ "": HereComesNikoLocationData(region="Bathhouse",id=base_id + 155),
+    # ~ Tadpole HQ
     "Between skyscrapers": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 156),
     "Next to skyscrapers": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 157),
     "?": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 158),
@@ -188,31 +193,38 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Under giant umbrella": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 164),
     "Inbetween buildings": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 165),
 
-    # DLC Garden
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-    # "": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 163),
-
     # Misc
-    "Give 250 Apples to Dojo guy": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 166),
-    "Contact List 1": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 167),
-    "Contact List 2": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 168),
+    "Give 250 Apples to Dojo guy": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 166),
+    "Contact List 1": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 167),
+    "Contact List 2": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 168),
 
     # Achievements
-    # "Frog fan": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Employee of the month!": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Bottled up": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Snail fashion show": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Volley dreams": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Hopeless romantic": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
-    # "Lost at sea": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 170),
+    "Frog Fan": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 176, can_create=lambda options: options.enable_achievements.value),
+    "Employee Of The Month!": HereComesNikoLocationData(region="Home", id=base_id + 177, can_create=lambda options: options.enable_achievements.value),
+    "Bottled Up": HereComesNikoLocationData(region="Bathhouse", id=base_id + 178, can_create=lambda options: options.enable_achievements.value),
+    "Snail Fashion Show": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 179, can_create=lambda options: options.enable_achievements.value),
+    "Volley Dreams": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 180, can_create=lambda options: options.enable_achievements.value),
+    "Hopeless Romantic": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 181, can_create=lambda options: options.enable_achievements.value),
+    "Lost at Sea": HereComesNikoLocationData(region="Home", id=base_id + 182, can_create=lambda options: options.enable_achievements.value),
+
+    # DLC Garden
+    "Cassette 1": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 183, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 2": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 184, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 3": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 185, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 4": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 186, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 5": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 187, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 6": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 188, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 7": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 189, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 8": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 190, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 9": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 191, can_create=lambda options: options.shuffle_garys_garden.value),
+    "Cassette 10": HereComesNikoLocationData(region="Gary's Garden",id=base_id + 192, can_create=lambda options: options.shuffle_garys_garden.value),
+
+    # Handsome Frog
+    "Hairball City - Handsome Frog": HereComesNikoLocationData(region="Hairball City",id=base_id + 193, can_create=lambda options: options.shuffle_handsome_frog.value),
+    "Turbine Town - Handsome Frog": HereComesNikoLocationData(region="Turbine Town",id=base_id + 194, can_create=lambda options: options.shuffle_handsome_frog.value),
+    "Salmon Creek Forest - Handsome Frog": HereComesNikoLocationData(region="Salmon Creek Forest",id=base_id + 195, can_create=lambda options: options.shuffle_handsome_frog.value),
+    "Public Pool - Handsome Frog": HereComesNikoLocationData(region="Public Pool",id=base_id + 196, can_create=lambda options: options.shuffle_handsome_frog.value),
+    "Bathhouse - Handsome Frog": HereComesNikoLocationData(region="Bathhouse",id=base_id + 197, can_create=lambda options: options.shuffle_handsome_frog.value),
 
     # Kiosk
     "Home Kiosk": HereComesNikoLocationData(region="Home",id=base_id + 170),
@@ -224,7 +236,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
 
     # Victory
     "Job Interview": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 169),
-    "You're hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
+    "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
 }
 
 location_table = {name: data.id for name, data in location_data_table.items() if data.id is not None}

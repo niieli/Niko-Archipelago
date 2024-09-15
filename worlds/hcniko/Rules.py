@@ -10,17 +10,17 @@ def can_talk_to_peper(state, player):
 def get_region_rules(player):
     return {
         "Home -> Hairball City":
-            lambda state: state.has("Hairball City", player),
+            lambda state: state.has("Hairball City Ticket", player),
         "Hairball City -> Turbine Town":
-            lambda state: state.has("Turbine Town", player),
+            lambda state: state.has("Turbine Town Ticket", player),
         "Turbine Town -> Salmon Creek Forest":
-            lambda state: state.has("Salmon Creek Forest", player),
+            lambda state: state.has("Salmon Creek Forest Ticket", player),
         "Salmon Creek Forest -> Public Pool":
-            lambda state: state.has("Public Pool", player),
+            lambda state: state.has("Public Pool Ticket", player),
         "Public Pool -> Bathhouse":
-            lambda state: state.has("Bathhouse", player),
+            lambda state: state.has("Bathhouse Ticket", player),
         "Bathhouse -> Tadpole HQ":
-            lambda state: state.has("Tadpole HQ", player),
+            lambda state: state.has("Tadpole HQ Ticket", player),
         "Tadpole HQ -> Home Party":
             lambda state: can_talk_to_peper(state, player),
     }
@@ -39,6 +39,8 @@ def get_location_rules(player):
             lambda state: state.has("Coin", player, 26),
         "Bathhouse Kiosk":
             lambda state: state.has("Coin", player, 31),
+        "Employee Of The Month!":
+            lambda state: has_all_coins(state, player),
         "Dustan on lighthouse":
             lambda state: state.has("Key", player),
         "Help Blippy 2 (PP)":
