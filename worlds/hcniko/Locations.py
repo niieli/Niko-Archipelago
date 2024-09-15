@@ -18,8 +18,7 @@ base_id = 598_145_444_000
 location_data_table: Dict[str, HereComesNikoLocationData] = {
     # Coins
     "Give High Frog Lunchbox": HereComesNikoLocationData(region="Home",id=base_id + 0),
-    # "Letter near crane": HereComesNikoLocationData(region="Home",id=base_id + 1),
-    # "Get hired": HereComesNikoLocationData(region="Home",id=base_id + 2, locked_item="Victory"),
+    # ~ Hairball City
     "Win BIG VOLLEY (HC)": HereComesNikoLocationData(region="Hairball City", id=base_id + 3),
     "Dustan on lighthouse": HereComesNikoLocationData(region="Hairball City",id=base_id + 4),
     "Gabi's Flowers (HC)": HereComesNikoLocationData(region="Hairball City",id=base_id + 5),
