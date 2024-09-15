@@ -8,6 +8,11 @@ class ShuffleKioskReward(Toggle):
     display_name = "Shuffle Kiosk Reward"
 
 
+class StartWithTicket(Toggle):
+    """You'll start with the Hairball City Ticket. Highly recommended as there are only 3 checks at Home"""
+    display_name = "Start with Ticket"
+
+
 class EnableAchievements(Toggle):
     """Enables if Achievements should be a location. If NOT it will be junk"""
     display_name = "Enable Achievements"
@@ -15,7 +20,7 @@ class EnableAchievements(Toggle):
 
 class ShuffleHandsomeFrog(Toggle):
     """Enables if talking to Handsome Frog should be a location. If NOT it will be junk"""
-    display_name = "Enable Achievements"
+    display_name = "Shuffle Handsome Frog"
 
 
 class ShufflGarysGarden(Toggle):
@@ -34,6 +39,7 @@ class HCNDeathLink(DeathLink):
 @dataclass
 class HereComesNikoOptions(PerGameCommonOptions):
     shuffle_kiosk_reward: ShuffleKioskReward
+    start_with_ticket: StartWithTicket
     enable_achievements: EnableAchievements
     shuffle_handsome_frog: ShuffleHandsomeFrog
     shuffle_garys_garden: ShufflGarysGarden

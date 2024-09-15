@@ -23,15 +23,15 @@ def get_region_rules(player):
     return {
         "Home -> Hairball City":
             lambda state: state.has("Hairball City Ticket", player),
-        "Hairball City -> Turbine Town":
+        "Home -> Turbine Town":
             lambda state: state.has("Turbine Town Ticket", player),
-        "Turbine Town -> Salmon Creek Forest":
+        "Home -> Salmon Creek Forest":
             lambda state: state.has("Salmon Creek Forest Ticket", player),
-        "Salmon Creek Forest -> Public Pool":
+        "Home -> Public Pool":
             lambda state: state.has("Public Pool Ticket", player),
-        "Public Pool -> Bathhouse":
+        "Home -> Bathhouse":
             lambda state: state.has("Bathhouse Ticket", player),
-        "Bathhouse -> Tadpole HQ":
+        "Home -> Tadpole HQ":
             lambda state: state.has("Tadpole HQ Ticket", player),
         "Tadpole HQ -> Home Party":
             lambda state: can_talk_to_peper(state, player)

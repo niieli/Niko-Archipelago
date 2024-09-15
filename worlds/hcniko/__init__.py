@@ -56,6 +56,9 @@ class HereComesNikoWorld(World):
         item_pool += [self.create_filler() for _ in range(total_locations - len(item_pool))]
         mw.itempool += item_pool
 
+        if self.options.start_with_ticket.value:
+            mw.push_precollected(self.create_item("Hairball City Ticket"))
+
     def create_regions(self) -> None:
         player = self.player
         mw = self.multiworld
@@ -84,7 +87,8 @@ class HereComesNikoWorld(World):
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
         if not self.options.shuffle_kiosk_reward.value:
-            mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
+            if not self.options.start_with_ticket.value:
+                mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
             mw.get_location("Hairball City Kiosk", player).place_locked_item(self.create_item("Turbine Town Ticket"))
             mw.get_location("Turbine Town Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest Ticket"))
             mw.get_location("Salmon Creek Forest Kiosk", player).place_locked_item(self.create_item("Public Pool Ticket"))
@@ -115,6 +119,7 @@ class HereComesNikoWorld(World):
     def fill_slot_data(self):
         return  {
             "shuffle_kiosk_reward": self.options.shuffle_kiosk_reward.value,
+            "start_with_ticket": self.options.start_with_ticket.value,
             "enable_achievements": self.options.enable_achievements.value,
             "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
             "shuffle_garys_garden": self.options.shuffle_garys_garden.value,

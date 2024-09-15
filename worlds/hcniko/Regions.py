@@ -7,12 +7,12 @@ class HereComesNikoRegionData(NamedTuple):
 
 region_data_table: Dict[str, HereComesNikoRegionData] = {
     "Menu": HereComesNikoRegionData(["Home"]),
-    "Home": HereComesNikoRegionData(["Hairball City"]),
-    "Hairball City": HereComesNikoRegionData(["Turbine Town"]),
-    "Turbine Town": HereComesNikoRegionData(["Salmon Creek Forest"]),
-    "Salmon Creek Forest": HereComesNikoRegionData(["Public Pool"]),
-    "Public Pool": HereComesNikoRegionData(["Bathhouse"]),
-    "Bathhouse": HereComesNikoRegionData(["Tadpole HQ"]),
+    "Home": HereComesNikoRegionData(["Hairball City","Turbine Town","Salmon Creek Forest","Public Pool","Bathhouse","Tadpole HQ"]),
+    "Hairball City": HereComesNikoRegionData([]),
+    "Turbine Town": HereComesNikoRegionData([]),
+    "Salmon Creek Forest": HereComesNikoRegionData([]),
+    "Public Pool": HereComesNikoRegionData([]),
+    "Bathhouse": HereComesNikoRegionData([]),
     "Tadpole HQ": HereComesNikoRegionData(["Home Party", "Gary's Garden"]),
     "Home Party": HereComesNikoRegionData([]),
     "Gary's Garden": HereComesNikoRegionData([])
