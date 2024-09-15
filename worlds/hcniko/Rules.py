@@ -1,3 +1,6 @@
+from . import Options
+from .Options import *
+
 def universal_item_rule(item):
     pass
 
@@ -6,6 +9,15 @@ def has_all_coins(state, player):
 
 def can_talk_to_peper(state, player):
     return state.has("Coin", player, 46)
+
+def has_enough_cassettes(state, player, int):
+    return state.has("Cassette", player, int*5)
+
+def has_superjump(state, player):
+    return state.has("Super Jump", player)
+
+def superjump_logic():
+    return True if Options.TalkToPepperWithSuperJumpOnly.value else False
 
 def get_region_rules(player):
     return {
@@ -22,7 +34,8 @@ def get_region_rules(player):
         "Bathhouse -> Tadpole HQ":
             lambda state: state.has("Tadpole HQ Ticket", player),
         "Tadpole HQ -> Home Party":
-            lambda state: can_talk_to_peper(state, player),
+            lambda state: can_talk_to_peper(state, player)
+                          #or has_superjump(state,player) and superjump_logic(),
     }
 
 def get_location_rules(player):
@@ -42,21 +55,33 @@ def get_location_rules(player):
         "Employee Of The Month!":
             lambda state: has_all_coins(state, player),
         "Dustan on lighthouse":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 1),
         "Help Blippy 2 (PP)":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 2),
         "Help Paul":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 3),
         "Help Blippy Coin (HQ)":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 4),
         "Behind frog statue (HC)":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 5),
         "Letter in locked cave":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 6),
         "Mahjong hideout":
-            lambda state: state.has("Key", player),
+            lambda state: state.has("Key", player, 7),
         "Give Mai 5 Cassettes (SCF)":
-            lambda state: state.has("Contact List 1", player),
+            lambda state: state.has("Contact List 1", player) and has_enough_cassettes(state,player,1) and state.has("Key", player, 8),
+        "Give Mitch 5 Cassettes (SCF)":
+            lambda state: has_enough_cassettes(state, player, 2),
+        "Give Mai 5 Cassettes (PP)":
+            lambda state: has_enough_cassettes(state, player, 3),
+        "Give Mitch 5 Cassettes (Bath)":
+            lambda state: has_enough_cassettes(state, player, 4),
+        "Give Mai 5 Cassettes (Bath)":
+            lambda state: has_enough_cassettes(state, player, 5),
+        "Give Mai 5 Cassettes (HQ)":
+            lambda state: has_enough_cassettes(state, player, 6),
+        "Give Mitch 5 Cassettes (HQ)":
+            lambda state: has_enough_cassettes(state, player, 7),
         "Fish with Fischer (SCF)":
             lambda state: state.has("Contact List 1", player),
         "Unknown CL1_1":

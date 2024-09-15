@@ -23,6 +23,11 @@ class ShufflGarysGarden(Toggle):
     display_name = "Shuffle Gary's Garden"
 
 
+class TalkToPepperWithSuperJumpOnly(Toggle):
+    """If Enabled, taking to Pepper in Tadpole HQ is logically accessible with only Super Jump"""
+    display_name = "Pepper with Super Jump only"
+
+
 class HCNDeathLink(DeathLink):
     """When somebody dies the level will be reloaded"""
 
@@ -32,5 +37,6 @@ class HereComesNikoOptions(PerGameCommonOptions):
     enable_achievements: EnableAchievements
     shuffle_handsome_frog: ShuffleHandsomeFrog
     shuffle_garys_garden: ShufflGarysGarden
+    superjump_only: TalkToPepperWithSuperJumpOnly
     start_inventory_from_pool: StartInventoryPool
     death_link: HCNDeathLink

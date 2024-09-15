@@ -25,7 +25,7 @@ class HereComesNikoWebWorld(WebWorld):
 
 
 class HereComesNikoWorld(World):
-    """A cozy little game, help"""
+    """A cozy little game, about frogs and being a good friend"""
 
     game = "Here Comes Niko!"
     data_version = 1
@@ -118,5 +118,6 @@ class HereComesNikoWorld(World):
             "enable_achievements": self.options.enable_achievements.value,
             "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
             "shuffle_garys_garden": self.options.shuffle_garys_garden.value,
+            #"superjump_only": self.options.superjump_only.value,
             "death_link": self.options.death_link.value
         }
