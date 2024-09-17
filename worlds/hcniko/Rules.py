@@ -19,6 +19,13 @@ def has_superjump(state, player):
 def superjump_logic():
     return True if Options.TalkToPepperWithSuperJumpOnly.value else False
 
+def has_all_tickets(state, player):
+    return (state.has("Hairball City Ticket", player)
+            and state.has("Turbine Town Ticket", player)
+            and state.has("Salmon Creek Forest Ticket", player)
+            and state.has("Public Pool Ticket", player)
+            and state.has("Bathhouse Ticket", player))
+
 def get_region_rules(player):
     return {
         "Home -> Hairball City":
@@ -40,98 +47,119 @@ def get_region_rules(player):
 
 def get_location_rules(player):
     return {
-        "Home Kiosk":
+        "Home - Kiosk":
             lambda state: state.has("Coin", player, 1),
-        "Hairball City Kiosk":
+        "Hairball City - Kiosk":
             lambda state: state.has("Coin", player, 6),
-        "Turbine Town Kiosk":
+        "Turbine Town - Kiosk":
             lambda state: state.has("Coin", player, 11),
-        "Salmon Creek Forest Kiosk":
+        "Salmon Creek Forest - Kiosk":
             lambda state: state.has("Coin", player, 21),
-        "Public Pool Kiosk":
+        "Public Pool - Kiosk":
             lambda state: state.has("Coin", player, 26),
-        "Bathhouse Kiosk":
+        "Bathhouse - Kiosk":
             lambda state: state.has("Coin", player, 31),
         "Employee Of The Month!":
             lambda state: has_all_coins(state, player),
-        "Dustan on lighthouse":
+        "Bottled Up":
+            lambda state: state.has("Hairball City Ticket", player)
+                          and state.has("Turbine Town Ticket", player)
+                          and state.has("Salmon Creek Forest Ticket", player)
+                          and state.has("Public Pool Ticket", player)
+                          and state.has("Bathhouse Ticket", player),
+        "Hopeless Romantic":
+            lambda state: has_all_tickets(state, player),
+        "Volley Dreams":
+            lambda state: has_all_tickets(state, player),
+        "Hairball City - Dustan on Lighthouse":
             lambda state: state.has("Key", player, 1),
-        "Help Blippy 2 (PP)":
+        "Public Pool - Blippy Coin":
             lambda state: state.has("Key", player, 2),
-        "Help Paul":
+        "Bathhouse - Poppy":
             lambda state: state.has("Key", player, 3),
-        "Help Blippy Coin (HQ)":
+        "Tadpole HQ - Blippy Coin":
             lambda state: state.has("Key", player, 4),
-        "Behind frog statue (HC)":
+        "Hairball City - Cassette behind Frog Statue":
             lambda state: state.has("Key", player, 5),
-        "Letter in locked cave":
+        "Salmon Creek Forest - Letter inside locked Cave":
             lambda state: state.has("Key", player, 6),
         "Mahjong hideout":
             lambda state: state.has("Key", player, 7),
-        "Give Mai 5 Cassettes (SCF)":
-            lambda state: state.has("Contact List 1", player) and has_enough_cassettes(state,player,1) and state.has("Key", player, 8),
-        "Give Mitch 5 Cassettes (SCF)":
+        "Salmon Creek Forest - Give Mai 5 Cassettes":
+            lambda state: state.has("Contact List 1", player)
+                          and has_enough_cassettes(state,player,1)
+                          and state.has("Key", player, 8),
+        "Salmon Creek Forest - Give Mitch 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 2),
-        "Give Mai 5 Cassettes (PP)":
+        "Public Pool - Give Mai 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 3),
-        "Give Mitch 5 Cassettes (Bath)":
+        "Bathhouse - Give Mitch 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 4),
-        "Give Mai 5 Cassettes (Bath)":
+        "Bathhouse - Give Mai 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 5),
-        "Give Mai 5 Cassettes (HQ)":
+        "Tadpole HQ - Give Mai 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 6),
-        "Give Mitch 5 Cassettes (HQ)":
+        "Tadpole HQ - Give Mitch 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 7),
-        "Fish with Fischer (SCF)":
+        "Salmon Creek Forest - Fish with Fischer":
             lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_1":
+        "Hairball City - Nina":
             lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_2":
+        "Hairball City - Moomy":
             lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_3":
+        "Hairball City - Give Mitch 5 Cassettes":
+            lambda state: state.has("Contact List 1", player)
+                          and has_enough_cassettes(state, player, 8),
+        "Hairball City - Give Mai 5 Cassettes":
+            lambda state: state.has("Contact List 1", player)
+                          and has_enough_cassettes(state, player, 9),
+        "Hairball City - Game Kid":
+            lambda state: state.has("Contact List 2", player),
+        "Hairball City - Blippy Dog":
+            lambda state: state.has("Contact List 2", player),
+        "Hairball City - Blippy Coin":
+            lambda state: state.has("Contact List 2", player),
+        "Hairball City - Serschel & Louist":
+            lambda state: state.has("Contact List 2", player),
+        "Turbine Town - Give Mitch 5 Cassettes":
+            lambda state: state.has("Contact List 1", player)
+                          and has_enough_cassettes(state, player, 10),
+        "Turbine Town - Give Mai 5 Cassettes":
+            lambda state: state.has("Contact List 1", player)
+                          and has_enough_cassettes(state, player, 11),
+        "Turbine Town - Blippy Dog":
             lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_4":
-            lambda state: state.has("Contact List 1", player),
-        "Unknown CL2_1":
+        "Turbine Town - Blippy Coin":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_2":
+        "Turbine Town - Serschel & Louist":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_3":
+        "Salmon Creek Forest - Game Kid":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_4":
+        "Salmon Creek Forest - Blippy Coin":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL1_1 (TT)":
-            lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_2 (TT)":
-            lambda state: state.has("Contact List 1", player),
-        "Unknown CL1_3 (TT)":
-            lambda state: state.has("Contact List 1", player),
-        "Unknown CL2_1 (TT)":
+        "Salmon Creek Forest - Serschel & Louist":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_2 (TT)":
+        "Public Pool - SPORTVIVAL VOLLEY":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_1 (SCF)":
+        "Public Pool - Blessley":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_2 (SCF)":
+        "Public Pool - Give Mitch 5 Cassettes":
+            lambda state: state.has("Contact List 2", player)
+                          and has_enough_cassettes(state, player, 12),
+        "Public Pool - Little Gabi's Flowers":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_3 (SCF)":
+        "Bathhouse - Fish with Fischer":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_1 (PP)":
+        "Bathhouse - Blessley":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_2 (PP)":
+        "Bathhouse - Little Gabi's Flowers":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_3 (PP)":
+        "Bathhouse - Blippy Dog":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_4 (PP)":
+        "Bathhouse - Blippy Coin":
             lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_1 (Bath)":
-            lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_2 (Bath)":
-            lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_3 (Bath)":
-            lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_4 (Bath)":
-            lambda state: state.has("Contact List 2", player),
-        "Unknown CL2_5 (Bath)":
-            lambda state: state.has("Contact List 2", player),
+        "Gary's Garden - Give Mai 5 Cassettes":
+            lambda state: has_enough_cassettes(state, player, 13),
+        "Gary's Garden - Give Mitch 5 Cassettes":
+            lambda state: has_enough_cassettes(state, player, 14),
     }

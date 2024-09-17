@@ -36,7 +36,11 @@ class HereComesNikoWorld(World):
     item_name_to_id = item_table
 
     def generate_early(self):
-        pass
+        max_coins = 79
+        max_cassettes = 71
+        if not self.options.shuffle_garys_garden.value:
+            max_coins = 76
+            max_cassettes = 61
 
     def create_item(self, name: str) -> HereComesNikoItem:
         return HereComesNikoItem(name, item_data_table[name].type, item_data_table[name].id, self.player)
@@ -88,12 +92,12 @@ class HereComesNikoWorld(World):
 
         if not self.options.shuffle_kiosk_reward.value:
             if not self.options.start_with_ticket.value:
-                mw.get_location("Home Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
-            mw.get_location("Hairball City Kiosk", player).place_locked_item(self.create_item("Turbine Town Ticket"))
-            mw.get_location("Turbine Town Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest Ticket"))
-            mw.get_location("Salmon Creek Forest Kiosk", player).place_locked_item(self.create_item("Public Pool Ticket"))
-            mw.get_location("Public Pool Kiosk", player).place_locked_item(self.create_item("Bathhouse Ticket"))
-            mw.get_location("Bathhouse Kiosk", player).place_locked_item(self.create_item("Tadpole HQ Ticket"))
+                mw.get_location("Home - Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
+            mw.get_location("Hairball City - Kiosk", player).place_locked_item(self.create_item("Turbine Town Ticket"))
+            mw.get_location("Turbine Town - Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest Ticket"))
+            mw.get_location("Salmon Creek Forest - Kiosk", player).place_locked_item(self.create_item("Public Pool Ticket"))
+            mw.get_location("Public Pool - Kiosk", player).place_locked_item(self.create_item("Bathhouse Ticket"))
+            mw.get_location("Bathhouse - Kiosk", player).place_locked_item(self.create_item("Tadpole HQ Ticket"))
 
     def get_filler_item_name(self) -> str:
         return "25 Apples"
