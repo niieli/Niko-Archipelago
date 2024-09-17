@@ -16,7 +16,7 @@ class HereComesNikoItemData(NamedTuple):
 base_id = 598_145_444_000
 
 item_data_table: Dict[str, HereComesNikoItemData] = {
-    "Coin": HereComesNikoItemData(base_id, type=ItemClassification.progression_skip_balancing, num_exist=76), #Actually 79 Coins, need to set via options (Gary's Garden)
+    "Coin": HereComesNikoItemData(base_id, type=ItemClassification.progression_skip_balancing, num_exist=79),
     "Cassette": HereComesNikoItemData(base_id+1, type=ItemClassification.progression_skip_balancing, num_exist=71),
     "Key": HereComesNikoItemData(base_id+2, type=ItemClassification.progression, num_exist=8),
     "Letter": HereComesNikoItemData(base_id+7, type=ItemClassification.filler),

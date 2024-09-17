@@ -36,11 +36,18 @@ class HereComesNikoWorld(World):
     item_name_to_id = item_table
 
     def generate_early(self):
-        max_coins = 79
-        max_cassettes = 71
-        if not self.options.shuffle_garys_garden.value:
-            max_coins = 76
-            max_cassettes = 61
+        # Random starting Ticket
+        if self.options.start_with_ticket.value:
+            tickets = [
+                "Hairball City Ticket",
+                "Turbine Town Ticket",
+                "Salmon Creek Forest Ticket",
+                "Public Pool Ticket",
+                "Bathhouse Ticket",
+                "Tadpole HQ Ticket"
+            ]
+            self.selected_ticket = self.random.choice(tickets)
+            self.multiworld.push_precollected(self.create_item(self.selected_ticket))
 
     def create_item(self, name: str) -> HereComesNikoItem:
         return HereComesNikoItem(name, item_data_table[name].type, item_data_table[name].id, self.player)
@@ -56,12 +63,16 @@ class HereComesNikoWorld(World):
                 while item_pool_count[name] < item.num_exist:
                     item_pool.append(self.create_item(name))
                     item_pool_count[name] += 1
+        if not self.options.shuffle_garys_garden.value:
+            for _ in range(3):
+                item_pool.remove(self.create_item("Coin"))
+            for _ in range(10):
+                item_pool.remove(self.create_item("Cassette"))
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
         item_pool += [self.create_filler() for _ in range(total_locations - len(item_pool))]
         mw.itempool += item_pool
 
-        if self.options.start_with_ticket.value:
-            mw.push_precollected(self.create_item("Hairball City Ticket"))
+
 
     def create_regions(self) -> None:
         player = self.player
@@ -91,13 +102,20 @@ class HereComesNikoWorld(World):
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
         if not self.options.shuffle_kiosk_reward.value:
-            if not self.options.start_with_ticket.value:
-                mw.get_location("Home - Kiosk", player).place_locked_item(self.create_item("Hairball City Ticket"))
-            mw.get_location("Hairball City - Kiosk", player).place_locked_item(self.create_item("Turbine Town Ticket"))
-            mw.get_location("Turbine Town - Kiosk", player).place_locked_item(self.create_item("Salmon Creek Forest Ticket"))
-            mw.get_location("Salmon Creek Forest - Kiosk", player).place_locked_item(self.create_item("Public Pool Ticket"))
-            mw.get_location("Public Pool - Kiosk", player).place_locked_item(self.create_item("Bathhouse Ticket"))
-            mw.get_location("Bathhouse - Kiosk", player).place_locked_item(self.create_item("Tadpole HQ Ticket"))
+            kiosk_locations = {
+                "Home - Kiosk": "Hairball City Ticket",
+                "Hairball City - Kiosk": "Turbine Town Ticket",
+                "Turbine Town - Kiosk": "Salmon Creek Forest Ticket",
+                "Salmon Creek Forest - Kiosk": "Public Pool Ticket",
+                "Public Pool - Kiosk": "Bathhouse Ticket",
+                "Bathhouse - Kiosk": "Tadpole HQ Ticket"
+            }
+            selected_ticket = getattr(self, 'selected_ticket', None)
+            for location, ticket in kiosk_locations.items():
+                # Skip placing this ticket if it matches the selected_ticket
+                if selected_ticket and ticket == selected_ticket:
+                    continue  # Skip this iteration to prevent placing the selected ticket
+                mw.get_location(location, player).place_locked_item(self.create_item(ticket))
 
     def get_filler_item_name(self) -> str:
         return "25 Apples"

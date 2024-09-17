@@ -9,27 +9,27 @@ class ShuffleKioskReward(Toggle):
 
 
 class StartWithTicket(Toggle):
-    """You'll start with the Hairball City Ticket. Highly recommended as there are only 3 checks at Home"""
+    """You'll start with a random Ticket. Highly recommended as there are only 3 checks at Home!"""
     display_name = "Start with Ticket"
 
 
 class EnableAchievements(Toggle):
-    """Enables if Achievements should be a location. If NOT it will be junk"""
+    """Enables if Achievements should be a location. If NOT it will be junk."""
     display_name = "Enable Achievements"
 
 
 class ShuffleHandsomeFrog(Toggle):
-    """Enables if talking to Handsome Frog should be a location. If NOT it will be junk"""
+    """Enables if talking to Handsome Frog should be a location. If NOT it will be junk."""
     display_name = "Shuffle Handsome Frog"
 
 
 class ShufflGarysGarden(Toggle):
-    """Choose whether Gary's Garden should have locations. If NOT it will ONLY contain junk"""
+    """Choose whether Gary's Garden should have locations. If NOT it will ONLY contain junk."""
     display_name = "Shuffle Gary's Garden"
 
 
 class TalkToPepperWithSuperJumpOnly(Toggle):
-    """If Enabled, taking to Pepper in Tadpole HQ is logically accessible with only Super Jump"""
+    """If Enabled, taking to Pepper in Tadpole HQ is logically accessible with only Super Jump."""
     display_name = "Pepper with Super Jump only"
 
 
