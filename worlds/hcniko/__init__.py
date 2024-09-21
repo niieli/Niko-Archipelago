@@ -13,8 +13,8 @@ class HereComesNikoWebWorld(WebWorld):
     theme = "partyTime"
 
     setup_en = Tutorial(
-        tutorial_name="Start Guide",
-        description="A guide to playing Here Comes Niko! in Archipelago.",
+        tutorial_name="Setup Guide",
+        description="A guide to setting up & playing Here Comes Niko! in Archipelago.",
         language="English",
         file_name="guide_en.md",
         link="guide/en",
@@ -28,7 +28,6 @@ class HereComesNikoWorld(World):
     """A cozy little game, about frogs and being a good friend"""
 
     game = "Here Comes Niko!"
-    data_version = 1
     web = HereComesNikoWebWorld()
     options: HereComesNikoOptions
     options_dataclass = HereComesNikoOptions
@@ -71,8 +70,6 @@ class HereComesNikoWorld(World):
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
         item_pool += [self.create_filler() for _ in range(total_locations - len(item_pool))]
         mw.itempool += item_pool
-
-
 
     def create_regions(self) -> None:
         player = self.player

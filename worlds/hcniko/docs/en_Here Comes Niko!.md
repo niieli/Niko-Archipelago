@@ -1,4 +1,4 @@
-# Clique
+# Here Comes Niko!
 
 ## What is this game?
 

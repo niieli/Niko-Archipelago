@@ -1,4 +1,4 @@
-# Clique Start Guide
+# Here Comes Niko! Setup Guide
 
 After rolling your seed, go to the [Clique Game](http://clique.pharware.com/) site and enter the server details, your 
 slot name, and a room password if one is required. Then click "Connect".
