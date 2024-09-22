@@ -4,7 +4,7 @@ from Options import Toggle, StartInventoryPool, DeathLink, PerGameCommonOptions
 
 
 class ShuffleKioskReward(Toggle):
-    """Choose whether to shuffle the Kiosk to NOT give a new level but instead something else."""
+    """Choose whether to shuffle the Kiosk to NOT give the next Ticket but instead something else."""
     display_name = "Shuffle Kiosk Reward"
 
 
@@ -14,17 +14,17 @@ class StartWithTicket(Toggle):
 
 
 class EnableAchievements(Toggle):
-    """Enables if Achievements should be a location. If NOT it will be junk."""
+    """Enables if Achievements should be a location."""
     display_name = "Enable Achievements"
 
 
 class ShuffleHandsomeFrog(Toggle):
-    """Enables if talking to Handsome Frog should be a location. If NOT it will be junk."""
+    """Enables if talking to Handsome Frog should be a location."""
     display_name = "Shuffle Handsome Frog"
 
 
 class ShufflGarysGarden(Toggle):
-    """Choose whether Gary's Garden should have locations. If NOT it will ONLY contain junk."""
+    """Choose whether Gary's Garden should have locations."""
     display_name = "Shuffle Gary's Garden"
 
 
