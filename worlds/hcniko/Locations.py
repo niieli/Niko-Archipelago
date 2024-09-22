@@ -238,7 +238,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Bathhouse - Kiosk": HereComesNikoLocationData(region="Bathhouse",id=base_id + 175),
 
     # Victory
-    "Tadpole HQ - Job Interview": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 169),
+    #"Tadpole HQ - Job Interview": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 169),
     "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
 }
 
