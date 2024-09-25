@@ -142,6 +142,6 @@ class HereComesNikoWorld(World):
             "enable_achievements": self.options.enable_achievements.value,
             "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
             "shuffle_garys_garden": self.options.shuffle_garys_garden.value,
-            #"superjump_only": self.options.superjump_only.value,
+            "cassette_logic": self.options.cassette_logic.value,
             "death_link": self.options.death_link.value
         }

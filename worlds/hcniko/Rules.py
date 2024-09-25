@@ -1,9 +1,6 @@
 from . import Options
 from .Options import *
 
-def universal_item_rule(item):
-    pass
-
 def has_all_coins(state, player):
     return state.has("Coin", player, 76)
 
@@ -12,12 +9,6 @@ def can_talk_to_peper(state, player):
 
 def has_enough_cassettes(state, player, int):
     return state.has("Cassette", player, int*5)
-
-def has_superjump(state, player):
-    return state.has("Super Jump", player)
-
-def superjump_logic():
-    return True if Options.TalkToPepperWithSuperJumpOnly.value else False
 
 def has_all_tickets(state, player):
     return (state.has("Hairball City Ticket", player)
@@ -43,7 +34,6 @@ def get_region_rules(player):
             lambda state: state.has("Tadpole HQ Ticket", player),
         "Tadpole HQ -> Home Party":
             lambda state: can_talk_to_peper(state, player)
-                          #or has_superjump(state,player) and superjump_logic(),
     }
 
 def get_location_rules(player):
@@ -173,4 +163,24 @@ def get_location_rules(player):
             lambda state: has_enough_cassettes(state, player, 13),
         "Gary's Garden - Give Mitch 5 Cassettes":
             lambda state: has_enough_cassettes(state, player, 14),
+        "Salmon Creek Forest - Bass":
+            lambda state: state.has("Contact List 1", player),
+        "Salmon Creek Forest - Catfish":
+            lambda state: state.has("Contact List 1", player),
+        "Salmon Creek Forest - Pike":
+            lambda state: state.has("Contact List 1", player),
+        "Salmon Creek Forest - Salmon":
+            lambda state: state.has("Contact List 1", player),
+        "Salmon Creek Forest - Trout":
+            lambda state: state.has("Contact List 1", player),
+        "Bathhouse - Anglerfish":
+            lambda state: state.has("Contact List 2", player),
+        "Bathhouse - Clione":
+            lambda state: state.has("Contact List 2", player),
+        "Bathhouse - Little Wiggly Guy":
+            lambda state: state.has("Contact List 2", player),
+        "Bathhouse - Jellyfish":
+            lambda state: state.has("Contact List 2", player),
+        "Bathhouse - Pufferfish":
+            lambda state: state.has("Contact List 2", player),
     }

@@ -240,6 +240,38 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     #Dustan
     "Dustan - Meeting First Time": HereComesNikoLocationData(region="Home", id=base_id + 202),
 
+    #Fishsanity
+    "Hairball City - Moorish Idol": HereComesNikoLocationData(region="Hairball City", id=base_id + 203, can_create=lambda options: options.fishsanity.value),
+    "Hairball City - Not Nemo": HereComesNikoLocationData(region="Hairball City", id=base_id + 204, can_create=lambda options: options.fishsanity.value),
+    "Hairball City - Eel": HereComesNikoLocationData(region="Hairball City", id=base_id + 205, can_create=lambda options: options.fishsanity.value),
+    "Hairball City - Flying Fish": HereComesNikoLocationData(region="Hairball City", id=base_id + 206, can_create=lambda options: options.fishsanity.value),
+    "Hairball City - Orange Fish": HereComesNikoLocationData(region="Hairball City", id=base_id + 207, can_create=lambda options: options.fishsanity.value),
+    "Turbine Town - Albino Corydoras": HereComesNikoLocationData(region="Turbine Town", id=base_id + 208, can_create=lambda options: options.fishsanity.value),
+    "Turbine Town - Axolotl": HereComesNikoLocationData(region="Turbine Town", id=base_id + 209, can_create=lambda options: options.fishsanity.value),
+    "Turbine Town - Prianha": HereComesNikoLocationData(region="Turbine Town", id=base_id + 210, can_create=lambda options: options.fishsanity.value),
+    "Turbine Town - Mantaray": HereComesNikoLocationData(region="Turbine Town", id=base_id + 211, can_create=lambda options: options.fishsanity.value),
+    "Turbine Town - Sand Shrimp": HereComesNikoLocationData(region="Turbine Town", id=base_id + 212, can_create=lambda options: options.fishsanity.value),
+    "Salmon Creek Forest - Bass": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 213, can_create=lambda options: options.fishsanity.value),
+    "Salmon Creek Forest - Catfish": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 214, can_create=lambda options: options.fishsanity.value),
+    "Salmon Creek Forest - Pike": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 215, can_create=lambda options: options.fishsanity.value),
+    "Salmon Creek Forest - Salmon": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 216, can_create=lambda options: options.fishsanity.value),
+    "Salmon Creek Forest - Trout": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 217, can_create=lambda options: options.fishsanity.value),
+    "Public Pool - Baby Crocodile": HereComesNikoLocationData(region="Public Pool", id=base_id + 218, can_create=lambda options: options.fishsanity.value),
+    "Public Pool - Gramma Loreto": HereComesNikoLocationData(region="Public Pool", id=base_id + 219, can_create=lambda options: options.fishsanity.value),
+    "Public Pool - Shark": HereComesNikoLocationData(region="Public Pool", id=base_id + 220, can_create=lambda options: options.fishsanity.value),
+    "Public Pool - Squid": HereComesNikoLocationData(region="Public Pool", id=base_id + 221, can_create=lambda options: options.fishsanity.value),
+    "Public Pool - Turtle": HereComesNikoLocationData(region="Public Pool", id=base_id + 222, can_create=lambda options: options.fishsanity.value),
+    "Bathhouse - Anglerfish": HereComesNikoLocationData(region="Bathhouse", id=base_id + 223, can_create=lambda options: options.fishsanity.value),
+    "Bathhouse - Clione": HereComesNikoLocationData(region="Bathhouse", id=base_id + 224, can_create=lambda options: options.fishsanity.value),
+    "Bathhouse - Little Wiggly Guy": HereComesNikoLocationData(region="Bathhouse", id=base_id + 225, can_create=lambda options: options.fishsanity.value),
+    "Bathhouse - Jellyfish": HereComesNikoLocationData(region="Bathhouse", id=base_id + 226, can_create=lambda options: options.fishsanity.value),
+    "Bathhouse - Pufferfish": HereComesNikoLocationData(region="Bathhouse", id=base_id + 227, can_create=lambda options: options.fishsanity.value),
+    "Tadpole HQ - Blue Fairy Shrimp": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 228, can_create=lambda options: options.fishsanity.value),
+    "Tadpole HQ - Bluestreak Cleaner Wrasse": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 229, can_create=lambda options: options.fishsanity.value),
+    "Tadpole HQ - Honey Gourami": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 230, can_create=lambda options: options.fishsanity.value),
+    "Tadpole HQ - Loach": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 231, can_create=lambda options: options.fishsanity.value),
+    "Tadpole HQ - Neon Tetra": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 232, can_create=lambda options: options.fishsanity.value),
+
     # Victory
     "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
 }

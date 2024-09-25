@@ -1,16 +1,19 @@
 from dataclasses import dataclass
 
-from Options import Toggle, StartInventoryPool, DeathLink, PerGameCommonOptions
+from Options import Toggle, StartInventoryPool, DeathLink, PerGameCommonOptions, Choice
 
 
 class ShuffleKioskReward(Toggle):
-    """Choose whether to shuffle the Kiosk to NOT give the next Ticket but instead something else."""
+    """Choose whether to shuffle the Kiosk to NOT give the next Ticket but instead something else.
+    Compatible with 'Start with Ticket'"""
     display_name = "Shuffle Kiosk Reward"
+    default = 1
 
 
 class StartWithTicket(Toggle):
     """You'll start with a random Ticket. Highly recommended as there are only 3 checks at Home!"""
     display_name = "Start with Ticket"
+    default = 1
 
 
 class EnableAchievements(Toggle):
@@ -23,14 +26,26 @@ class ShuffleHandsomeFrog(Toggle):
     display_name = "Shuffle Handsome Frog"
 
 
-class ShufflGarysGarden(Toggle):
+class ShuffleGarysGarden(Toggle):
     """Choose whether Gary's Garden should have locations."""
     display_name = "Shuffle Gary's Garden"
+    default = 1
 
 
-class TalkToPepperWithSuperJumpOnly(Toggle):
-    """If Enabled, taking to Pepper in Tadpole HQ is logically accessible with only Super Jump."""
-    display_name = "Pepper with Super Jump only"
+class CassetteLogic(Choice):
+    """This changes how Mitch & Mai work
+
+    levelbased: Hairball City Mitch/Mai Need 5/10 Cassettes, Turbine Town Mitch/Mai Need 15/20, SCF Mitch/Mai Need 25/30 and so on.
+    progressive: NOT IMPLEMENTED Mitch/Mai will need progressively more Cassettes. 5 -> 10 -> 15 -> 20 -> 25 | Level doesn't matter."""
+    display_name = "Cassette Logic"
+    option_Level_Based = 0
+    option_progressive = 1
+    default = 0
+
+
+class Fishsanity(Toggle):
+    """Every single fish you can fish with Fischer is a unique location."""
+    display_name = "Fishsanity"
 
 
 class HCNDeathLink(DeathLink):
@@ -42,7 +57,8 @@ class HereComesNikoOptions(PerGameCommonOptions):
     start_with_ticket: StartWithTicket
     enable_achievements: EnableAchievements
     shuffle_handsome_frog: ShuffleHandsomeFrog
-    shuffle_garys_garden: ShufflGarysGarden
-    superjump_only: TalkToPepperWithSuperJumpOnly
+    shuffle_garys_garden: ShuffleGarysGarden
+    cassette_logic: CassetteLogic
+    fishsanity: Fishsanity
     start_inventory_from_pool: StartInventoryPool
     death_link: HCNDeathLink
