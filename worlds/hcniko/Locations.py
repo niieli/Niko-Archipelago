@@ -194,8 +194,8 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
 
     # Misc
     "Tadpole HQ - Dojo Guy": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 166),
-    "Contact List 1": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 167),
-    "Contact List 2": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 168),
+    "Salmon Creek Forest - Contact List 1": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 167),
+    "Tadpole HQ - Contact List 2": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 168),
 
     # Achievements
     "Frog Fan": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 176, can_create=lambda options: options.enable_achievements.value),
