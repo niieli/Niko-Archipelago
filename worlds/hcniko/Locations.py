@@ -181,7 +181,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Bathhouse - Cassette On Pipes near Kiosk": HereComesNikoLocationData(region="Bathhouse",id=base_id + 153),
     "Bathhouse - Cassette Mahjong Hideout": HereComesNikoLocationData(region="Bathhouse",id=base_id + 154),
     # ~ Tadpole HQ
-    "Tadpole HQ - Cassette Walljump Skyscrapers": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 156),
+    "Tadpole HQ - Cassette Wall Jump Skyscrapers": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 156),
     "Tadpole HQ - Cassette next to Skyscrapers": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 157),
     "Tadpole HQ - Cassette near Little Gabi": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 158),
     "Tadpole HQ - Cassette behind Tall Skyscraper": HereComesNikoLocationData(region="Tadpole HQ",id=base_id + 159),
@@ -201,7 +201,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Frog Fan": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 176, can_create=lambda options: options.enable_achievements.value),
     "Employee Of The Month!": HereComesNikoLocationData(region="Home", id=base_id + 177, can_create=lambda options: options.enable_achievements.value),
     "Bottled Up": HereComesNikoLocationData(region="Bathhouse", id=base_id + 178, can_create=lambda options: options.enable_achievements.value),
-    "Snail Fashion Show": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 179, can_create=lambda options: options.enable_achievements.value),
+    "Snail Fashion Show": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 179, can_create=lambda options: options.enable_achievements.value != 1),
     "Volley Dreams": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 180, can_create=lambda options: options.enable_achievements.value),
     "Hopeless Romantic": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 181, can_create=lambda options: options.enable_achievements.value),
     "Lost at Sea": HereComesNikoLocationData(region="Home", id=base_id + 182, can_create=lambda options: options.enable_achievements.value),

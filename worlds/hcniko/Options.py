@@ -16,9 +16,12 @@ class StartWithTicket(Toggle):
     default = 1
 
 
-class EnableAchievements(Toggle):
-    """Enables if Achievements should be a location."""
+class EnableAchievements(Choice):
+    """Enables if Achievements should be a location.
+    Frog Fan only needs 10 bumps & Volley Dreams only needs a highscore of 5 in every level."""
     display_name = "Enable Achievements"
+    option_all_achievements = 0
+    option_except_snail_fashion_show = 1
 
 
 class ShuffleHandsomeFrog(Toggle):
@@ -35,7 +38,8 @@ class ShuffleGarysGarden(Toggle):
 class CassetteLogic(Choice):
     """This changes how Mitch & Mai work
 
-    levelbased: Hairball City Mitch/Mai Need 5/10 Cassettes, Turbine Town Mitch/Mai Need 15/20, SCF Mitch/Mai Need 25/30 and so on.
+    levelbased: Hairball City Mitch/Mai want 5/10 Cassettes, Turbine Town Mitch/Mai want 15/20, SCF Mitch/Mai want 25/30,
+    Public Pool Mitch/Mai want 35/40, Bathhouse Mitch/Mai want 45/50, Tadpole HQ Mitch/Mai want 55/60 and (if enabled) Gary's Garden Mitch/Mai want 65/70.
     progressive: NOT IMPLEMENTED Mitch/Mai will need progressively more Cassettes. 5 -> 10 -> 15 -> 20 -> 25 | Level doesn't matter."""
     display_name = "Cassette Logic"
     option_Level_Based = 0
