@@ -23,6 +23,8 @@ class EnableAchievements(Choice):
     display_name = "Enable Achievements"
     option_all_achievements = 0
     option_except_snail_fashion_show = 1
+    option_disabled = 2
+    default = 2
 
 
 class ShuffleHandsomeFrog(Toggle):
