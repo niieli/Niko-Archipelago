@@ -21,8 +21,9 @@ item_data_table: Dict[str, HereComesNikoItemData] = {
     "Key": HereComesNikoItemData(base_id+2, type=ItemClassification.progression, num_exist=8),
     "Letter": HereComesNikoItemData(base_id+7, type=ItemClassification.filler),
     "25 Apples": HereComesNikoItemData(base_id + 3, type=ItemClassification.filler),
-    "Contact List 1": HereComesNikoItemData(base_id+4, type=ItemClassification.progression, num_exist=1),
-    "Contact List 2": HereComesNikoItemData(base_id+5, type=ItemClassification.progression, num_exist=1),
+    "Contact List 1": HereComesNikoItemData(base_id+4, type=ItemClassification.progression, num_exist=1, can_create=lambda options: not options.progressive_contact_list.value),
+    "Contact List 2": HereComesNikoItemData(base_id+5, type=ItemClassification.progression, num_exist=1, can_create=lambda options: not options.progressive_contact_list.value),
+    "Progressive Contact List": HereComesNikoItemData(base_id+15, type=ItemClassification.progression, num_exist=2, can_create=lambda options:  options.progressive_contact_list.value),
     "Super Jump": HereComesNikoItemData(base_id+6, type=ItemClassification.useful, num_exist=1),
     "10 Bugs": HereComesNikoItemData(base_id + 14, type=ItemClassification.filler),
 

@@ -134,7 +134,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Hairball City - Cassette Breakable Box near Lighthouse under ramp": HereComesNikoLocationData(region="Hairball City",id=base_id + 106),
     "Hairball City - Cassette behind Lighthouse": HereComesNikoLocationData(region="Hairball City",id=base_id + 107),
     "Hairball City - Cassette Breakable Box on Small Island near Bench": HereComesNikoLocationData(region="Hairball City",id=base_id + 108),
-    "Hairball City - Cassette behind Frog Statue": HereComesNikoLocationData(region="Hairball City",id=base_id + 109),
+    "Hairball City - Cassette above Frog Statue": HereComesNikoLocationData(region="Hairball City",id=base_id + 109),
     #  ~ Turbine Town
     "Turbine Town - Cassette inside partially sunken Shipping Container": HereComesNikoLocationData(region="Turbine Town",id=base_id + 111),
     "Turbine Town - Cassette on Cube Rock": HereComesNikoLocationData(region="Turbine Town",id=base_id + 112),
@@ -194,12 +194,12 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
 
     # Misc
     "Tadpole HQ - Dojo Guy": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 166),
-    "Salmon Creek Forest - Contact List 1": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 167),
-    "Tadpole HQ - Contact List 2": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 168),
+    "Salmon Creek Forest - Contact List": HereComesNikoLocationData(region="Salmon Creek Forest", id=base_id + 167),
+    "Tadpole HQ - Contact List": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 168),
 
     # Achievements
     "Frog Fan": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 176, can_create=lambda options: options.enable_achievements.value != 2),
-    "Employee Of The Month!": HereComesNikoLocationData(region="Home", id=base_id + 177, can_create=lambda options: options.enable_achievements.value != 2),
+    "Employee Of The Month!": HereComesNikoLocationData(region="Home", id=base_id + 177, can_create=lambda options: options.enable_achievements.value != 2 and options.goal_completion.value != 1),
     "Bottled Up": HereComesNikoLocationData(region="Bathhouse", id=base_id + 178, can_create=lambda options: options.enable_achievements.value != 2),
     "Snail Fashion Show": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 179, can_create=lambda options: options.enable_achievements.value == 0),
     "Volley Dreams": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 180, can_create=lambda options: options.enable_achievements.value != 2),
@@ -273,7 +273,8 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Tadpole HQ - Neon Tetra": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 232, can_create=lambda options: options.fishsanity.value),
 
     # Victory
-    "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory"),
+    "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory", can_create=lambda options: options.goal_completion.value == 0),
+    "Best Employee!": HereComesNikoLocationData(region="Home", locked_item="Victory", can_create=lambda options: options.goal_completion.value == 1)
 }
 
 location_table = {name: data.id for name, data in location_data_table.items() if data.id is not None}

@@ -1,6 +1,7 @@
-from typing import List, Dict
+from typing import List, Dict, TextIO
 
-from BaseClasses import Region, Tutorial
+from BaseClasses import MultiWorld
+from BaseClasses import Region, Tutorial, ItemClassification
 from worlds.AutoWorld import World, WebWorld
 from .Items import item_data_table, HereComesNikoItem, item_table
 from .Locations import location_data_table, HereComesNikoLocation, locked_locations, location_table
@@ -34,7 +35,20 @@ class HereComesNikoWorld(World):
     location_name_to_id = location_table
     item_name_to_id = item_table
 
+    def __init__(self, multiworld: "MultiWorld", player: int):
+        super().__init__(multiworld, player)
+        self.kiosk_cost: Dict[str, int] = {
+            "Kiosk Home": 0,
+            "Kiosk Hairball City": 0,
+            "Kiosk Turbine Town": 0,
+            "Kiosk Salmon Creek Forest": 0,
+            "Kiosk Public Pool": 0,
+            "Kiosk Bathhouse": 0,
+            "Elevator": 0
+        }
+
     def generate_early(self):
+        adjust_options(self)
         # Random starting Ticket
         if self.options.start_with_ticket.value:
             tickets = [
@@ -67,6 +81,16 @@ class HereComesNikoWorld(World):
                 item_pool.remove(self.create_item("Coin"))
             for _ in range(10):
                 item_pool.remove(self.create_item("Cassette"))
+        if self.options.goal_completion.value == 1:
+            coins_needed = 76
+        else:
+            coins_needed = self.kiosk_cost["Elevator"]
+        coin_count = 0
+        for item in item_pool:
+            if item.name == "Coin":
+                coin_count += 1
+                if coin_count <= coins_needed:
+                    item.classification = ItemClassification.progression
         total_locations = len(self.multiworld.get_unfilled_locations(self.player))
         item_pool += [self.create_filler() for _ in range(total_locations - len(item_pool))]
         mw.itempool += item_pool
@@ -124,16 +148,21 @@ class HereComesNikoWorld(World):
         # Complete condition
         mw.completion_condition[player] = lambda state: state.has("Victory", player)
 
-        region_rules = get_region_rules(player)
+        region_rules = get_region_rules(player, self)
         for entrance_name, rule in region_rules.items():
             entrance = mw.get_entrance(entrance_name, player)
             entrance.access_rule = rule
 
-        location_rules = get_location_rules(player)
+        location_rules = get_location_rules(player, self)
         for location in mw.get_locations(player):
             name = location.name
             if name in location_rules and location_data_table[name].can_create(self.options):
                 location.access_rule = location_rules[name]
+
+    def write_spoiler_header(self, spoiler_handle: TextIO):
+        spoiler_handle.write(f"Starting Ticket: {self.selected_ticket}\n")
+        for i in self.kiosk_cost:
+            spoiler_handle.write("%s Cost: %i\n" %(i, self.kiosk_cost[i]))
 
     def fill_slot_data(self):
         return  {
@@ -142,6 +171,11 @@ class HereComesNikoWorld(World):
             "enable_achievements": self.options.enable_achievements.value,
             "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
             "shuffle_garys_garden": self.options.shuffle_garys_garden.value,
+            "min_kiosk_cost": self.options.min_kiosk_cost.value,
+            "max_kiosk_cost": self.options.max_kiosk_cost.value,
+            "min_elevator_cost": self.options.min_elevator_cost.value,
+            "max_elevator_cost": self.options.max_elevator_cost.value,
+            "goal_completion": self.options.goal_completion.value,
             "cassette_logic": self.options.cassette_logic.value,
             "death_link": self.options.death_link.value
         }
