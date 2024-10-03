@@ -166,15 +166,15 @@ class HereComesNikoWorld(World):
 
     def fill_slot_data(self):
         return  {
+            "kioskhome": self.kiosk_cost["Kiosk Home"],
+            "kioskhc": self.kiosk_cost["Kiosk Hairball City"],
+            "kiosktt": self.kiosk_cost["Kiosk Turbine Town"],
+            "kiosksfc": self.kiosk_cost["Kiosk Salmon Creek Forest"],
+            "kioskpp": self.kiosk_cost["Kiosk Public Pool"],
+            "kioskbath": self.kiosk_cost["Kiosk Bathhouse"],
+            "kioskhq": self.kiosk_cost["Elevator"],
             "shuffle_kiosk_reward": self.options.shuffle_kiosk_reward.value,
             "start_with_ticket": self.options.start_with_ticket.value,
-            "enable_achievements": self.options.enable_achievements.value,
-            "shuffle_handsome_frog": self.options.shuffle_handsome_frog.value,
-            "shuffle_garys_garden": self.options.shuffle_garys_garden.value,
-            "min_kiosk_cost": self.options.min_kiosk_cost.value,
-            "max_kiosk_cost": self.options.max_kiosk_cost.value,
-            "min_elevator_cost": self.options.min_elevator_cost.value,
-            "max_elevator_cost": self.options.max_elevator_cost.value,
             "goal_completion": self.options.goal_completion.value,
             "cassette_logic": self.options.cassette_logic.value,
             "death_link": self.options.death_link.value

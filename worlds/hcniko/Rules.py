@@ -1,4 +1,3 @@
-cost: int
 def has_all_coins(state, player):
     return state.has("Coin", player, 76)
 
