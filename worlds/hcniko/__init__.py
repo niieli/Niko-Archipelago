@@ -47,6 +47,23 @@ class HereComesNikoWorld(World):
             "Elevator": 0
         }
 
+        self.cassette_cost: Dict[str, int] = {
+            "Hairball City - Mitch": 0,
+            "Hairball City - Mai": 0,
+            "Turbine Town - Mitch": 0,
+            "Turbine Town - Mai": 0,
+            "Salmon Creek Forest - Mai": 0,
+            "Salmon Creek Forest - Mitch": 0,
+            "Public Pool - Mitch": 0,
+            "Public Pool - Mai": 0,
+            "Bathhouse - Mitch": 0,
+            "Bathhouse - Mai": 0,
+            "Tadpole HQ - Mai": 0,
+            "Tadpole HQ - Mitch": 0,
+            "Gary's Garden - Mai": 0,
+            "Gary's Garden - Mitch": 0,
+        }
+
     def generate_early(self):
         adjust_options(self)
         # Random starting Ticket
@@ -163,6 +180,9 @@ class HereComesNikoWorld(World):
         spoiler_handle.write(f"Starting Ticket: {self.selected_ticket}\n")
         for i in self.kiosk_cost:
             spoiler_handle.write("%s Cost: %i\n" %(i, self.kiosk_cost[i]))
+        for i in self.cassette_cost:
+            real_cassette_cost = self.cassette_cost[i] * 5
+            spoiler_handle.write(f"%s Cassette Cost: %i\n" %(i, real_cassette_cost))
 
     def fill_slot_data(self):
         return  {
@@ -173,6 +193,20 @@ class HereComesNikoWorld(World):
             "kioskpp": self.kiosk_cost["Kiosk Public Pool"],
             "kioskbath": self.kiosk_cost["Kiosk Bathhouse"],
             "kioskhq": self.kiosk_cost["Elevator"],
+            "chc1": self.cassette_cost["Hairball City - Mitch"],
+            "chc2": self.cassette_cost["Hairball City - Mai"],
+            "ctt1": self.cassette_cost["Turbine Town - Mitch"],
+            "ctt2": self.cassette_cost["Turbine Town - Mai"],
+            "csfc1": self.cassette_cost["Salmon Creek Forest - Mitch"],
+            "csfc2": self.cassette_cost["Salmon Creek Forest - Mai"],
+            "cpp1": self.cassette_cost["Public Pool - Mitch"],
+            "cpp2": self.cassette_cost["Public Pool - Mai"],
+            "cbath1": self.cassette_cost["Bathhouse - Mitch"],
+            "cbath2": self.cassette_cost["Bathhouse - Mai"],
+            "chq1": self.cassette_cost["Tadpole HQ - Mitch"],
+            "chq2": self.cassette_cost["Tadpole HQ - Mai"],
+            "cgg1": self.cassette_cost["Gary's Garden - Mitch"],
+            "cgg2": self.cassette_cost["Gary's Garden - Mai"],
             "shuffle_kiosk_reward": self.options.shuffle_kiosk_reward.value,
             "start_with_ticket": self.options.start_with_ticket.value,
             "goal_completion": self.options.goal_completion.value,

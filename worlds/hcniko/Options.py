@@ -114,11 +114,13 @@ class CassetteLogic(Choice):
 
     levelbased: Hairball City Mitch/Mai want 5/10 Cassettes, Turbine Town Mitch/Mai want 15/20, SCF Mitch/Mai want 25/30,
     Public Pool Mitch/Mai want 35/40, Bathhouse Mitch/Mai want 45/50, Tadpole HQ Mitch/Mai want 55/60 and (if enabled) Gary's Garden Mitch/Mai want 65/70.
-    progressive: NOT IMPLEMENTED Mitch/Mai will need progressively more Cassettes. 5 -> 10 -> 15 -> 20 -> 25 | Level doesn't matter."""
+    Scattered: Prices are randomly shuffled between all Mitch & Mai Locations"""
+    #"Progressive: !!NOT IMPLEMENTED!! Mitch/Mai will need progressively more Cassettes. 5 -> 10 -> 15 -> 20 -> 25 | Level doesn't matter."
     display_name = "Cassette Logic"
     option_Level_Based = 0
-    option_progressive = 1
-    default = 0
+    #option_progressive = 1
+    option_scattered = 2
+    default = 2
 
 
 class ProgressiveContactList(Toggle):

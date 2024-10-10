@@ -1,22 +1,22 @@
 # Here Comes Niko! Setup Guide
 
-After rolling your seed, go to the [Clique Game](http://clique.pharware.com/) site and enter the server details, your 
-slot name, and a room password if one is required. Then click "Connect".
+- Here Comes Niko!: [Steam](https://store.steampowered.com/app/925950/Here_Comes_Niko/)
+- Archipelago Mod: [GitHub](https://github.com/niieli/NikoArchipelagoMod/releases/latest)
+- apworld: [GitHub](https://github.com/niieli/Niko-Archipelago/releases/latest)
 
-If you're playing on "easy mode", just click the button and receive "Satisfaction".
+## Installation
 
-If you're playing on "hard mode", you may need to wait for activation before you can complete your objective. Luckily, 
-Clique runs in most major browsers that support HTML5, so you can load Clique on your phone and be productive while 
-you wait!
+1. Download and install [BepInEx 5.4.x](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.22) in your Here Comes Niko root folder. 
+2. Start the game once so that BepInEx creates its stuff
+3. Download the latest zip from the [release page](https://github.com/niieli/NikoArchipelagoMod/releases/latest) and extract its content into `BepInEx/plugins`
 
-If you need some ideas for what to do while waiting for button activation, give the following a try:
+## Connecting
 
-- Clean your room.
-- Wash the dishes.
-- Get some food from a non-descript fast food restaurant.
-- Do the daily Wordle.
-- ~~Sell your soul to Phar.~~
-- Do your school work.
+After loading into the game you insert the server address and port, your slot name and a password if necessary in the top left of the game.
 
+![image](https://github.com/user-attachments/assets/2112698d-d144-4873-9c31-9b457a69d0f1)
 
-~~If you run into any issues with this game, definitely do not contact **thephar** on discord. *wink* *wink*~~
+Then click 'Connect' and you should load into Home with a blank save. 
+(If you already have a save with the same address, port, name and seed, it will load into that one instead)
+
+You can delete Archipelago saves at `...\AppData\LocalLow\Frog Vibes\Here Comes Niko!\Archipelago` (not sure for other systems)

@@ -73,6 +73,18 @@ def get_location_rules(player, world: "HereComesNikoWorld"):
             world.kiosk_cost[kiosk_name] = cost
             last_cost = cost
 
+    if world.options.cassette_logic.value == 2:
+        cassette_values = list(range(1, 14 + 1))
+        world.random.shuffle(cassette_values)
+        cassette_locations = list(world.cassette_cost.keys())
+        for i, location_name in enumerate(cassette_locations):
+            world.cassette_cost[location_name] = cassette_values[i]
+    else:
+        cassette_values = list(range(1, 14 + 1))
+        cassette_locations = list(world.cassette_cost.keys())
+        for i, location_name in enumerate(cassette_locations):
+            world.cassette_cost[location_name] = cassette_values[i]
+
     return {
         "Home - Kiosk":
             lambda state: (state.has("Coin", player, world.kiosk_cost["Kiosk Home"])),
@@ -105,17 +117,17 @@ def get_location_rules(player, world: "HereComesNikoWorld"):
         "Best Employee!":
             lambda state: has_all_coins(state, player),
         "Turbine Town - Dustan on Wind Turbine":
-            lambda state: state.has("Key", player, 1),
+            lambda state: state.has("Key", player, 7),
         "Public Pool - Blippy Coin":
-            lambda state: state.has("Key", player, 2),
+            lambda state: state.has("Key", player, 7),
         "Bathhouse - Poppy":
-            lambda state: state.has("Key", player, 3),
+            lambda state: state.has("Key", player, 7),
         "Tadpole HQ - Blippy Coin":
-            lambda state: state.has("Key", player, 4),
+            lambda state: state.has("Key", player, 7),
         "Hairball City - Cassette above Frog Statue":
-            lambda state: state.has("Key", player, 5),
+            lambda state: state.has("Key", player, 7),
         "Salmon Creek Forest - Letter inside locked Cave":
-            lambda state: state.has("Key", player, 6),
+            lambda state: state.has("Key", player, 7),
         "Bathhouse - Cassette Mahjong Hideout":
             lambda state: state.has("Key", player, 7),
         "Salmon Creek Forest - Fish with Fischer":
@@ -187,47 +199,32 @@ def get_location_rules(player, world: "HereComesNikoWorld"):
                           or state.has("Salmon Creek Forest Ticket", player)
                           or state.has("Bathhouse Ticket", player),
         #Cassette
-        "Hairball City - Give Mitch 5 Cassettes":
-            lambda state: (state.has("Contact List 1", player)
-                          or state.has("Progressive Contact List", player, 1))
-                          and has_enough_cassettes(state, player, 1),
-        "Hairball City - Give Mai 5 Cassettes":
-            lambda state: (state.has("Contact List 1", player)
-                          or state.has("Progressive Contact List", player, 1))
-                          and has_enough_cassettes(state, player, 2),
-        "Turbine Town - Give Mitch 5 Cassettes":
-            lambda state: (state.has("Contact List 1", player)
-                          or state.has("Progressive Contact List", player, 1))
-                          and has_enough_cassettes(state, player, 3),
-        "Turbine Town - Give Mai 5 Cassettes":
-            lambda state: (state.has("Contact List 1", player)
-                          or state.has("Progressive Contact List", player, 1))
-                          and has_enough_cassettes(state, player, 4),
-        "Salmon Creek Forest - Give Mai 5 Cassettes":
-            lambda state: (state.has("Contact List 1", player)
-                          or state.has("Progressive Contact List", player, 1))
-                          and has_enough_cassettes(state, player, 5)
-                          and state.has("Key", player, 8),
-        "Salmon Creek Forest - Give Mitch 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 6),
-        "Public Pool - Give Mitch 5 Cassettes":
-            lambda state: (state.has("Contact List 2", player)
-                          or state.has("Progressive Contact List", player, 2))
-                          and has_enough_cassettes(state, player, 7),
-        "Public Pool - Give Mai 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 8),
-        "Bathhouse - Give Mitch 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 9),
-        "Bathhouse - Give Mai 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 10),
-        "Tadpole HQ - Give Mai 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 11),
-        "Tadpole HQ - Give Mitch 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 12),
-        "Gary's Garden - Give Mai 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 13),
-        "Gary's Garden - Give Mitch 5 Cassettes":
-            lambda state: has_enough_cassettes(state, player, 14),
+        "Hairball City - Mitch": lambda state: (state.has("Contact List 1", player)
+                              or state.has("Progressive Contact List", player, 1))
+                              and has_enough_cassettes(state, player, world.cassette_cost["Hairball City - Mitch"]),
+        "Hairball City - Mai": lambda state: (state.has("Contact List 1", player)
+                              or state.has("Progressive Contact List", player, 1))
+                              and has_enough_cassettes(state, player, world.cassette_cost["Hairball City - Mai"]),
+        "Turbine Town - Mitch": lambda state: (state.has("Contact List 1", player)
+                              or state.has("Progressive Contact List", player, 1))
+                              and has_enough_cassettes(state, player, world.cassette_cost["Turbine Town - Mitch"]),
+        "Turbine Town - Mai": lambda state: (state.has("Contact List 1", player)
+                              or state.has("Progressive Contact List", player, 1))
+                              and has_enough_cassettes(state, player, world.cassette_cost["Turbine Town - Mai"]),
+        "Salmon Creek Forest - Mai": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Salmon Creek Forest - Mai"])
+                              and state.has("Key", player, 8),
+        "Salmon Creek Forest - Mitch": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Salmon Creek Forest - Mitch"]),
+        "Public Pool - Mitch": lambda state: (state.has("Contact List 2", player)
+                              or state.has("Progressive Contact List", player, 2))
+                              and has_enough_cassettes(state, player, world.cassette_cost["Public Pool - Mitch"]),
+        "Public Pool - Mai": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Public Pool - Mai"]),
+        "Bathhouse - Mitch": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Bathhouse - Mitch"]),
+        "Bathhouse - Mai": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Bathhouse - Mai"]),
+        "Tadpole HQ - Mai": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Tadpole HQ - Mai"]),
+        "Tadpole HQ - Mitch": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Tadpole HQ - Mitch"]),
+        "Gary's Garden - Mai": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Gary's Garden - Mai"]),
+        "Gary's Garden - Mitch": lambda state: has_enough_cassettes(state, player, world.cassette_cost["Gary's Garden - Mitch"]),
+            #Fish
         "Salmon Creek Forest - Bass":
             lambda state: state.has("Contact List 1", player)
                           or state.has("Progressive Contact List", player, 1),
