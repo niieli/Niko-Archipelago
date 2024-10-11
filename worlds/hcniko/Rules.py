@@ -15,7 +15,7 @@ def has_all_tickets(state, player):
             and state.has("Bathhouse Ticket", player)
             and state.has("Tadpole HQ Ticket", player))
 
-def get_region_rules(player, world: "HereComesNikoWorld"):
+def get_region_rules(player, world):
     if world.options.min_elevator_cost.value == world.options.max_elevator_cost.value:
         world.kiosk_cost["Elevator"] = world.options.max_elevator_cost.value
     else:
@@ -38,7 +38,7 @@ def get_region_rules(player, world: "HereComesNikoWorld"):
             lambda state: can_talk_to_peper(state, player, world.kiosk_cost["Elevator"])
     }
 
-def get_location_rules(player, world: "HereComesNikoWorld"):
+def get_location_rules(player, world):
     lowest_cost: int = world.options.min_kiosk_cost.value
     highest_cost: int = world.options.max_kiosk_cost.value
     cost_increment: int = (highest_cost - lowest_cost) // len(world.kiosk_cost)

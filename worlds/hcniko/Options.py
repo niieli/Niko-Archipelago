@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from Options import Toggle, StartInventoryPool, DeathLink, PerGameCommonOptions, Choice, Range
 
-def adjust_options(world: "HereComesNikoWorld"):
+def adjust_options(world):
     if world.options.max_kiosk_cost < world.options.min_kiosk_cost:
         world.options.max_kiosk_cost.value, world.options.min_kiosk_cost.value = \
          world.options.min_kiosk_cost.value, world.options.max_kiosk_cost.value
@@ -23,7 +23,7 @@ def adjust_options(world: "HereComesNikoWorld"):
     if world.options.min_elevator_cost > tot_coins:
         world.options.min_elevator_cost.value = min(79, tot_coins)
 
-def total_coins(world: "HereComesNikoWorld") -> int:
+def total_coins(world) -> int:
     count: int = 76
     if world.options.shuffle_garys_garden.value:
         count += 3
