@@ -129,6 +129,11 @@ class ProgressiveContactList(Toggle):
     default = 1
 
 
+class SnailShopLocations(Toggle):
+    """When enabled the clothes shop from the Tamagotchi Snail will contain AP Items."""
+    display_name = "Snail Shop"
+
+
 class Fishsanity(Toggle):
     """Every single fish you can fish with Fischer is a unique location."""
     display_name = "Fishsanity"
@@ -151,6 +156,7 @@ class HereComesNikoOptions(PerGameCommonOptions):
     max_elevator_cost: MaxElevatorCost
     cassette_logic: CassetteLogic
     progressive_contact_list: ProgressiveContactList
+    snail_shop: SnailShopLocations
     fishsanity: Fishsanity
     start_inventory_from_pool: StartInventoryPool
     death_link: HCNDeathLink

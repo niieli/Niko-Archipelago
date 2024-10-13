@@ -272,6 +272,24 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Tadpole HQ - Loach": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 231, can_create=lambda options: options.fishsanity.value),
     "Tadpole HQ - Neon Tetra": HereComesNikoLocationData(region="Tadpole HQ", id=base_id + 232, can_create=lambda options: options.fishsanity.value),
 
+    # Snail Shop
+    "Snail Shop - Bowtie": HereComesNikoLocationData(region="Home",id=base_id + 233, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Motorcycle": HereComesNikoLocationData(region="Home",id=base_id + 234, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Sunglasses": HereComesNikoLocationData(region="Home",id=base_id + 235, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Mahjong": HereComesNikoLocationData(region="Home",id=base_id + 236, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Cap": HereComesNikoLocationData(region="Home",id=base_id + 237, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - King Staff": HereComesNikoLocationData(region="Home",id=base_id + 238, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Mouse": HereComesNikoLocationData(region="Home",id=base_id + 239, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Clown Face": HereComesNikoLocationData(region="Home",id=base_id + 240, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Phone": HereComesNikoLocationData(region="Home",id=base_id + 241, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Bandanna": HereComesNikoLocationData(region="Home",id=base_id + 242, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Stars": HereComesNikoLocationData(region="Home",id=base_id + 243, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Sword": HereComesNikoLocationData(region="Home",id=base_id + 244, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Top hat": HereComesNikoLocationData(region="Home",id=base_id + 245, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Glasses": HereComesNikoLocationData(region="Home",id=base_id + 246, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Flower": HereComesNikoLocationData(region="Home",id=base_id + 247, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Small Hat": HereComesNikoLocationData(region="Home",id=base_id + 248, can_create=lambda options: options.snail_shop.value),
+
     # Victory
     "You're Hired!": HereComesNikoLocationData(region="Home Party", locked_item="Victory", can_create=lambda options: options.goal_completion.value == 0),
     "Best Employee!": HereComesNikoLocationData(region="Home", locked_item="Victory", can_create=lambda options: options.goal_completion.value == 1)

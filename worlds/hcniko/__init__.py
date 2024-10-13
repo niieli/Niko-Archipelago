@@ -207,6 +207,7 @@ class HereComesNikoWorld(World):
             "chq2": self.cassette_cost["Tadpole HQ - Mai"],
             "cgg1": self.cassette_cost["Gary's Garden - Mitch"],
             "cgg2": self.cassette_cost["Gary's Garden - Mai"],
+            "snailshop": self.options.snail_shop.value,
             "shuffle_kiosk_reward": self.options.shuffle_kiosk_reward.value,
             "start_with_ticket": self.options.start_with_ticket.value,
             "goal_completion": self.options.goal_completion.value,
