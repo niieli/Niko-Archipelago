@@ -261,20 +261,20 @@ def get_location_rules(player, world):
             lambda state: state.has("Contact List 2", player)
                           or state.has("Progressive Contact List", player, 2),
         #Snail Shop
-        "Snail Shop - Bowtie": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Motorcycle": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Sunglasses": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Mahjong": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Cap": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - King Staff": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Mouse": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Clown Face": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Phone": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Bandanna": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Stars": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Sword": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Top hat": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Glasses": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Flower": lambda state: has_tickets(state, player, 3),
-        "Snail Shop - Small Hat": lambda state: has_tickets(state, player, 3),
+        "Snail Shop - Bowtie": lambda state: has_tickets(state, player, 4), #10000$
+        "Snail Shop - Motorcycle": lambda state: has_tickets(state, player, 2), #500$
+        "Snail Shop - Sunglasses": lambda state: has_tickets(state, player, 3), #2000$
+        "Snail Shop - Mahjong": lambda state: has_tickets(state, player, 1), #100$
+        "Snail Shop - Cap": lambda state: has_tickets(state, player, 2), #500$
+        "Snail Shop - King Staff": lambda state: has_tickets(state, player, 4), #10000$
+        "Snail Shop - Mouse": lambda state: has_tickets(state, player, 3), #1000$
+        "Snail Shop - Clown Face": lambda state: has_tickets(state, player, 2), #500$
+        "Snail Shop - Phone": lambda state: has_tickets(state, player, 3), #1000$
+        "Snail Shop - Bandanna": lambda state: has_tickets(state, player, 2), #500$
+        "Snail Shop - Stars": lambda state: has_tickets(state, player, 2), #500$
+        "Snail Shop - Sword": lambda state: has_tickets(state, player, 3), #3000$
+        "Snail Shop - Top hat": lambda state: has_tickets(state, player, 1), #50$
+        "Snail Shop - Glasses": lambda state: has_tickets(state, player, 1), #50$
+        "Snail Shop - Flower": lambda state: has_tickets(state, player, 1), #50$
+        "Snail Shop - Small Hat": lambda state: has_tickets(state, player, 1), #50$
     }
