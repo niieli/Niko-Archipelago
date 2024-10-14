@@ -269,7 +269,7 @@ def get_location_rules(player, world):
         "Snail Shop - King Staff": lambda state: has_tickets(state, player, 4), #10000$
         "Snail Shop - Mouse": lambda state: has_tickets(state, player, 3), #1000$
         "Snail Shop - Clown Face": lambda state: has_tickets(state, player, 2), #500$
-        "Snail Shop - Phone": lambda state: has_tickets(state, player, 3), #1000$
+        "Snail Shop - Cat": lambda state: has_tickets(state, player, 3), #1000$
         "Snail Shop - Bandanna": lambda state: has_tickets(state, player, 2), #500$
         "Snail Shop - Stars": lambda state: has_tickets(state, player, 2), #500$
         "Snail Shop - Sword": lambda state: has_tickets(state, player, 3), #3000$

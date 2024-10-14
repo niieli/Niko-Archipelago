@@ -281,7 +281,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     "Snail Shop - King Staff": HereComesNikoLocationData(region="Home",id=base_id + 238, can_create=lambda options: options.snail_shop.value),
     "Snail Shop - Mouse": HereComesNikoLocationData(region="Home",id=base_id + 239, can_create=lambda options: options.snail_shop.value),
     "Snail Shop - Clown Face": HereComesNikoLocationData(region="Home",id=base_id + 240, can_create=lambda options: options.snail_shop.value),
-    "Snail Shop - Phone": HereComesNikoLocationData(region="Home",id=base_id + 241, can_create=lambda options: options.snail_shop.value),
+    "Snail Shop - Cat": HereComesNikoLocationData(region="Home",id=base_id + 241, can_create=lambda options: options.snail_shop.value),
     "Snail Shop - Bandanna": HereComesNikoLocationData(region="Home",id=base_id + 242, can_create=lambda options: options.snail_shop.value),
     "Snail Shop - Stars": HereComesNikoLocationData(region="Home",id=base_id + 243, can_create=lambda options: options.snail_shop.value),
     "Snail Shop - Sword": HereComesNikoLocationData(region="Home",id=base_id + 244, can_create=lambda options: options.snail_shop.value),
