@@ -177,7 +177,8 @@ class HereComesNikoWorld(World):
                 location.access_rule = location_rules[name]
 
     def write_spoiler_header(self, spoiler_handle: TextIO):
-        spoiler_handle.write(f"Starting Ticket: {self.selected_ticket}\n")
+        if self.options.start_with_ticket.value:
+            spoiler_handle.write(f"Starting Ticket: {self.selected_ticket}\n")
         for i in self.kiosk_cost:
             spoiler_handle.write("%s Cost: %i\n" %(i, self.kiosk_cost[i]))
         for i in self.cassette_cost:
