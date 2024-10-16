@@ -33,7 +33,7 @@ def total_coins(world) -> int:
 class ShuffleKioskReward(Toggle):
     """Choose whether to shuffle the Kiosk to NOT give the next Ticket but instead something else.
     Compatible with 'Start with Ticket'.
-    Scuffed but works. Check the in-game Tracker for Kiosk Cost and if you bought it."""
+    Check the in-game Tracker for Kiosk Cost and if you bought it."""
     display_name = "Shuffle Kiosk Reward"
     default = 1
 
