@@ -35,6 +35,7 @@ item_data_table: Dict[str, HereComesNikoItemData] = {
     "Public Pool Ticket": HereComesNikoItemData(base_id + 11, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
     "Bathhouse Ticket": HereComesNikoItemData(base_id + 12, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
     "Tadpole HQ Ticket": HereComesNikoItemData(base_id + 13, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value),
+    #"Gary's Garden Ticket": HereComesNikoItemData(base_id + 16, type=ItemClassification.progression, can_create=lambda options: options.shuffle_kiosk_reward.value and options.access_garys_garden.value == 1),
 
     "Victory": HereComesNikoItemData(type=ItemClassification.progression, can_create=lambda options: False)
 }

@@ -65,6 +65,18 @@ class ShuffleGarysGarden(Toggle):
     default = 1
 
 
+class GarysGardenAccess(Choice):
+    """Changes when Gary's Garden is accessible.
+    Tadpole HQ: Gary's Garden will be accessible when Tadpole HQ is accessible.
+    Tadpole HQ & Gary's Garden: Gary's Garden won't be accessible until Tadpole HQ Ticket & Gary's Garden Ticket are obtained."""
+    #"Gary's Garden: Gary's Garden will be accessible in 'Home' when Gary's Garden Ticket has been obtained."
+    display_name = "Shuffle Gary's Garden"
+    option_tadpole_hq = 0
+    option_tadpole_and_garden = 1
+    #option_garden = 2
+    default = 0
+
+
 class GoalCompletion(Choice):
     """Set your Completion Goal.
     Hired: Reach Pepper's Interview and get hired!
@@ -149,6 +161,7 @@ class HereComesNikoOptions(PerGameCommonOptions):
     enable_achievements: EnableAchievements
     shuffle_handsome_frog: ShuffleHandsomeFrog
     shuffle_garys_garden: ShuffleGarysGarden
+    #access_garys_garden: GarysGardenAccess
     goal_completion: GoalCompletion
     min_kiosk_cost: MinKioskCost
     max_kiosk_cost: MaxKioskCost
