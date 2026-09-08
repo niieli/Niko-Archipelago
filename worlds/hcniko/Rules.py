@@ -2054,7 +2054,8 @@ def get_location_rules(player, world):
         "Chatsanity - Hungry Frog":
             lambda state: has_access_garden(state, player, world)
                           and has_enough_seeds(state, player, world, 9)
-                          and can_soda(state, player, world),
+                          and can_soda(state, player, world)
+                          and can_ac(state, player, world),
         "Chatsanity - Impatient Frog":
             lambda state: state.has("Hairball City Ticket", player)
                           and has_textbox(state, player, world, "Hairball City"),
@@ -2161,9 +2162,7 @@ def get_location_rules(player, world):
                           or (state.has("Tadpole HQ Ticket", player)
                               and has_textbox(state, player, world, "Tadpole HQ"))
                           or (state.has("Party Invitation", player)
-                              and has_textbox(state, player, world, "Home"))
-                          or (state.has("Public Pool Ticket", player)
-                              and has_textbox(state, player, world, "Public Pool")),
+                              and has_textbox(state, player, world, "Home")),
         "Chatsanity - Mata":
             lambda state: has_textbox(state, player, world, "Home"),
         "Chatsanity - Mickey":
@@ -2366,9 +2365,7 @@ def get_location_rules(player, world):
                           or (state.has("Tadpole HQ Ticket", player)
                               and has_textbox(state, player, world, "Tadpole HQ"))
                           or (state.has("Party Invitation", player)
-                              and has_textbox(state, player, world, "Home"))
-                          or (state.has("Public Pool Ticket", player)
-                              and has_textbox(state, player, world, "Public Pool")),
+                              and has_textbox(state, player, world, "Home")),
         "Chatsanity - Stijn's Dad":
             lambda state: state.has("Salmon Creek Forest Ticket", player)
                           and has_textbox(state, player, world, "Salmon Creek Forest"),
@@ -2625,7 +2622,8 @@ def get_location_rules(player, world):
                           and can_ac(state, player, world),
         "Gary's Garden - Hungry Frog (Chatsanity)":
             lambda state: has_enough_seeds(state, player, world, 9)
-                          and can_soda(state, player, world),
+                          and can_soda(state, player, world)
+                          and can_ac(state, player, world),
         "Gary's Garden - Tree Branch Near The Top":
             lambda state: has_enough_seeds(state, player, world, 9)
                           and can_soda(state, player, world)
