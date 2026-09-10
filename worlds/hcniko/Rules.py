@@ -1159,6 +1159,9 @@ def get_location_rules(player, world):
             lambda state: can_swim(state, player, world),
         "Turbine Town - Britney (Chatsanity)":
             lambda state: can_swim(state, player, world),
+        "Turbine Town - Next To Torii Gates":
+            lambda state: can_swim(state, player, world, True)
+                          or can_parasol(state, player, world),
 
         "Salmon Creek Forest - Beneath Pond":
             lambda state: can_swim(state, player, world),
@@ -1237,6 +1240,10 @@ def get_location_rules(player, world):
             lambda state: can_swim(state, player, world, True),
         "Public Pool - Niko, Pink Frog & King Frog (Thought)":
             lambda state: can_swim(state, player, world, True),
+        "Public Pool - Frog Hint (Chatsanity)":
+            lambda state: has_contact_list(state, player, 2),
+        "Public Pool - Frog Hint 2 (Chatsanity)":
+            lambda state: has_contact_list(state, player, 2),
 
         "Bathhouse - Bone Above Middle Bathhouse":
             lambda state: can_swim(state, player, world)
@@ -1867,6 +1874,14 @@ def get_location_rules(player, world):
         "Chatsanity - Hat Kid":
             lambda state: state.has("Public Pool Ticket", player)
                           and has_textbox(state, player, world, "Public Pool"),
+        "Chatsanity - Hint Frog":
+            lambda state: state.has("Public Pool Ticket", player)
+                          and has_textbox(state, player, world, "Public Pool")
+                          and has_contact_list(state, player, 2),
+        "Chatsanity - Hint Frog 2":
+            lambda state: state.has("Public Pool Ticket", player)
+                          and has_textbox(state, player, world, "Public Pool")
+                          and has_contact_list(state, player, 2),
         "Chatsanity - Hungry Frog":
             lambda state: has_access_garden(state, player, world)
                           and has_enough_seeds(state, player, world, 9)
