@@ -907,6 +907,12 @@ def get_location_rules(player, world):
 
         "Hairball City - Big Umbrella":
             lambda state: can_parasol(state, player, world),
+        "Hairball City - Palm Tree":
+            lambda state: can_parasol(state, player, world),
+        "Hairball City - Bug On Tall Palm Tree Platform 1":
+            lambda state: can_parasol(state, player, world),
+        "Hairball City - Bug On Tall Palm Tree Platform 2":
+            lambda state: can_parasol(state, player, world),
         "Turbine Town - Stone Pillar Behind Wind Turbine":
             lambda state: can_parasol(state, player, world),
         "Turbine Town - Bug On Stone Pillar Behind Wind Turbine 1":
@@ -1256,6 +1262,22 @@ def get_location_rules(player, world):
                           and has_contact_list(state, player, 2),
         "Bathhouse - Hut in Water":
             lambda state: can_swim(state, player, world),
+        "Bathhouse - Steamy Frog (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Mickey (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Moe (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Marshal (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Lil' Sis Doe (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Carl (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Biki (Chatsanity)":
+            lambda state: can_swim(state, player, world),
+        "Bathhouse - Wess (Chatsanity)":
+            lambda state: can_swim(state, player, world),
 
         "Tadpole HQ - Bone On Wood Board On Side Of Right Building":
             lambda state: can_swim(state, player, world),
@@ -1506,9 +1528,11 @@ def get_location_rules(player, world):
         "Bathhouse - Clover (Chatsanity)":
             lambda state: has_access_to(state, player, "Public Pool - Frogtective"),
         "Bathhouse - Marry D. Carota (Chatsanity)":
-            lambda state: has_access_to(state, player, "Public Pool - Frogtective"),
+            lambda state: has_access_to(state, player, "Public Pool - Frogtective")
+                          and can_swim(state, player, world),
         "Bathhouse - David D. Carota (Chatsanity)":
-            lambda state: has_access_to(state, player, "Public Pool - Frogtective"),
+            lambda state: has_access_to(state, player, "Public Pool - Frogtective")
+                          and can_swim(state, player, world),
         "Bathhouse - Dustan (Chatsanity)":
             lambda state: has_access_to(state, player, "Bathhouse - Dustan on Bathhouse"),
 
@@ -1541,7 +1565,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Bathhouse"),
         "Chatsanity - Biki":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Bird":
             lambda state: has_access_garden(state, player, world)
                           and has_enough_seeds(state, player, world, 4)
@@ -1629,7 +1654,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Turbine Town"),
         "Chatsanity - Carl":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Carrot":
             lambda state: (state.has("Hairball City Ticket", player)
                           and has_textbox(state, player, world, "Hairball City"))
@@ -1866,7 +1892,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Turbine Town"),
         "Chatsanity - Lil' Sis Doe":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Little Gabi":
             lambda state: (state.has("Hairball City Ticket", player)
                           and has_textbox(state, player, world, "Hairball City"))
@@ -1941,6 +1968,10 @@ def get_location_rules(player, world):
         "Chatsanity - Marry D. Carota":
             lambda state: state.has("Public Pool Ticket", player)
                           and has_textbox(state, player, world, "Public Pool"),
+        "Chatsanity - Marshal":
+            lambda state: state.has("Bathhouse Ticket", player)
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Master":
             lambda state: state.has("Tadpole HQ Ticket", player)
                           and has_textbox(state, player, world, "Tadpole HQ"),
@@ -1957,7 +1988,8 @@ def get_location_rules(player, world):
             lambda state: has_textbox(state, player, world, "Home"),
         "Chatsanity - Mickey":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Miki":
             lambda state: state.has("Bathhouse Ticket", player)
                           and has_textbox(state, player, world, "Bathhouse"),
@@ -1992,7 +2024,8 @@ def get_location_rules(player, world):
                               and has_textbox(state, player, world, "Tadpole HQ")),
         "Chatsanity - Moe":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Mom Gull (PP)":
             lambda state: state.has("Public Pool Ticket", player)
                           and has_textbox(state, player, world, "Public Pool"),
@@ -2146,7 +2179,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Salmon Creek Forest"),
         "Chatsanity - Steamy Frog":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Stijn":
             lambda state: has_access_to(state, player, "Salmon Creek Forest - Stijn & Melissa")
                           or (state.has("Bathhouse Ticket", player)
@@ -2251,7 +2285,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Public Pool"),
         "Chatsanity - Wess":
             lambda state: state.has("Bathhouse Ticket", player)
-                          and has_textbox(state, player, world, "Bathhouse"),
+                          and has_textbox(state, player, world, "Bathhouse")
+                          and can_swim(state, player, world),
         "Chatsanity - Wind Dragon":
             lambda state: state.has("Turbine Town Ticket", player)
                           and has_textbox(state, player, world, "Turbine Town"),

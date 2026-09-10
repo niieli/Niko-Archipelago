@@ -1212,7 +1212,7 @@ location_data_table: Dict[str, HereComesNikoLocationData] = {
     #Chatsanity Pool - Pepper": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2101, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
     #Chatsanity Pool - Pepper": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2102, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
     "Chatsanity - Mickey": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2103, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
-    "Chatsanity - Marshal": HereComesNikoLocationData(region="ChatBath",id=base_id + 2104, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
+    "Chatsanity - Marshal": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2104, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
     "Chatsanity - Big Bro Stag": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2105, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
     "Chatsanity - Lil' Sis Doe": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2106, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
     "Chatsanity - Snow Frog Frog": HereComesNikoLocationData(region="Chatsanity",id=base_id + 2107, can_create=lambda options: options.chatsanity.value==2, location_group="Chatsanity"),
