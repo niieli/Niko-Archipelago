@@ -504,7 +504,8 @@ def get_location_rules(player, world):
                           and has_textbox(state, player, world, "Hairball City"),
         "Hairball City - Game Kid":
             lambda state: has_contact_list(state, player, 2)
-                          and has_textbox(state, player, world, "Hairball City"),
+                          and has_textbox(state, player, world, "Hairball City")
+                          and can_swim(state, player, world),
         "Hairball City - Blippy Dog":
             lambda state: has_contact_list(state, player, 1)
                           and (options.bonesanity.value != 2 or state.has("Hairball City Bone", player, 5))
@@ -537,7 +538,8 @@ def get_location_rules(player, world):
                           and can_swim(state, player, world),
         "Salmon Creek Forest - Serschel & Louist":
             lambda state: has_contact_list(state, player, 2)
-                          and has_textbox(state, player, world, "Salmon Creek Forest"),
+                          and has_textbox(state, player, world, "Salmon Creek Forest")
+                          and can_swim(state, player, world),
         "Public Pool - WATER VOLLEY":
             lambda state: has_contact_list(state, player, 2)
                           and has_textbox(state, player, world, "Public Pool")
@@ -1286,6 +1288,8 @@ def get_location_rules(player, world):
             lambda state: can_swim(state, player, world)
                           and can_bonk(state, player, world)
                           and (state.has("Key", player, 7) or state.has("Tadpole HQ Key", player)),
+        "Tadpole HQ - Apple On Xylophone":
+            lambda state: can_swim(state, player, world),
 
         "Home - Give High Frog Lunchbox":
             lambda state: has_textbox(state, player, world, "Home"),
@@ -1442,8 +1446,7 @@ def get_location_rules(player, world):
         "Public Pool - Mitch (Chatsanity)":
             lambda state: has_contact_list(state, player, 2),
         "Public Pool - Blippy (Chatsanity)":
-            lambda state: has_contact_list(state, player, 2)
-                          and (state.has("Key", player, 7)
+            lambda state: (state.has("Key", player, 7)
                            or state.has("Public Pool Key", player)),
         "Public Pool - Little Gabi (Chatsanity)":
             lambda state: has_contact_list(state, player, 2),
