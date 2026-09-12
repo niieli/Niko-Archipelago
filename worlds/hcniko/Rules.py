@@ -338,43 +338,41 @@ def get_location_rules(player, world):
            # mulitiple entries due to Mitch and Mai having different conditions in Salmon Creek Forest and Public pool
     MitchMaiProgressiveList = [lambda state: (state.has("Hairball City Ticket", player)
             and has_contact_list(state, player, 1)
-            and (options.textbox.value != 2 or state.has("Hairball City Textbox", player))),
+            and has_textbox(state, player, world, "Hairball City")),
         lambda state: (state.has("Hairball City Ticket", player)
             and has_contact_list(state, player, 1)
-            and (options.textbox.value != 2 or state.has("Hairball City Textbox", player))),
+            and has_textbox(state, player, world, "Hairball City")),
         lambda state: (state.has("Turbine Town Ticket", player)
             and has_contact_list(state, player, 1)
-            and (options.textbox.value != 2 or state.has("Turbine Town Textbox", player))),
+            and has_textbox(state, player, world, "Turbine Town")),
         lambda state: (state.has("Turbine Town Ticket", player)
             and has_contact_list(state, player, 1)
-            and (options.textbox.value != 2 or state.has("Turbine Town Textbox", player))),
+            and has_textbox(state, player, world, "Turbine Town")),
            # Mitch needs only contact list 1
         lambda state: (state.has("Salmon Creek Forest Ticket", player)
             and has_contact_list(state, player, 1)
-            and (options.textbox.value != 2 or state.has("Salmon Creek Forest Textbox", player))),
+            and has_textbox(state, player, world, "Salmon Creek Forest")),
            # Mai needs only a key
         lambda state: (state.has("Salmon Creek Forest Ticket", player)
             and (state.has("Key", player, 7) or state.has("Salmon Creek Forest Key", player))
-            and (options.textbox.value != 2 or state.has("Salmon Creek Forest Textbox", player))),
+            and has_textbox(state, player, world, "Salmon Creek Forest")),
             # Mitch needs contact list 2
         lambda state: (state.has("Public Pool Ticket", player)
             and has_contact_list(state, player, 2)
-            and (options.textbox.value != 2 or state.has("Public Pool Textbox", player))),
+            and has_textbox(state, player, world, "Public Pool")),
            # Mai is always there
         lambda state: (state.has("Public Pool Ticket", player)
-            and (options.textbox.value != 2 or state.has("Public Pool Textbox", player))),
+            and has_textbox(state, player, world, "Public Pool")),
         lambda state: (state.has("Bathhouse Ticket", player)
-            and (options.textbox.value != 2 or state.has("Bathhouse Textbox", player))),
+            and has_textbox(state, player, world, "Bathhouse")),
         lambda state: (state.has("Bathhouse Ticket", player)
-            and (options.textbox.value != 2 or state.has("Bathhouse Textbox", player))),
+            and has_textbox(state, player, world, "Bathhouse")),
         lambda state: (state.has("Tadpole HQ Ticket", player)
-            and (options.textbox.value != 2 or state.has("Tadpole HQ Textbox", player))),
+            and has_textbox(state, player, world, "Tadpole HQ")),
         lambda state: (state.has("Tadpole HQ Ticket", player)
-            and (options.textbox.value != 2 or state.has("Tadpole HQ Textbox", player))),
-        lambda state: (state.has("Gary's Garden Ticket", player)
-            and (options.textbox.value != 2 or state.has("Gary's Garden Textbox", player))),
-        lambda state: (state.has("Gary's Garden Ticket", player)
-            and (options.textbox.value != 2 or state.has("Gary's Garden Textbox", player)))]
+            and has_textbox(state, player, world, "Tadpole HQ")),
+        lambda state: has_access_garden(state, player, world),
+        lambda state: has_access_garden(state, player, world)]
 
     if options.cassette_logic.value == 2:
         world.random.shuffle(cassette_values)
@@ -836,11 +834,13 @@ def get_location_rules(player, world):
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
         "Mitch/Mai - 13":
             lambda state: (has_enough_cassettes(state, player, 13)
-                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 13))
+                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 12))
+                          #and debug_mitch_mai(state) >= 12
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
         "Mitch/Mai - 14":
             lambda state: (has_enough_cassettes(state, player, 14)
-                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 14))
+                          )
+                          and (debug_mitch_mai(state) >= 13)
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
 
         "Hairball City - Apple On Frog Statue Island Pier 1":
