@@ -1060,6 +1060,32 @@ def get_location_rules(player, world):
             lambda state: can_ac(state, player, world),
         "Bathhouse - Seed By Serschel & Louist":
             lambda state: can_ac(state, player, world),
+        "Bathhouse - Apple By Handsome Frog 1":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 2":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 3":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 4":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 5":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 6":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 7":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 8":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 9":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Apple By Handsome Frog 10":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Bug Near Handsome Frog 1":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Bug Near Handsome Frog 2":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Bug Near Handsome Frog 3":
+            lambda state: (can_soda(state, player, world) or can_ac(state, player, world)),
 
         "Achievement - Lost at Sea":
             lambda state: can_swim(state, player, world)
@@ -1244,6 +1270,48 @@ def get_location_rules(player, world):
             lambda state: has_contact_list(state, player, 2),
         "Public Pool - Frog Hint 2 (Chatsanity)":
             lambda state: has_contact_list(state, player, 2),
+        "Public Pool - Behind Frog Statue":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Bug On Frog Statue 1":
+            lambda state: can_swim(state, player, world, True),
+        "Public Pool - Bug On Frog Statue 2":
+            lambda state: can_swim(state, player, world, True),
+        "Public Pool - First Apple Group Near Shallow Pool First Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - First Apple Group Near Shallow Pool First Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - First Apple Group Near Shallow Pool First Palm Tree 3":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - First Apple Group Near Shallow Pool Second Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - First Apple Group Near Shallow Pool Second Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - First Apple Group Near Shallow Pool Second Palm Tree 3":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool First Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool First Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool First Palm Tree 3":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool Second Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool Second Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Second Apple Group Near Shallow Pool Second Palm Tree 3":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool First Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool First Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool First Palm Tree 3":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool Second Palm Tree 1":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool Second Palm Tree 2":
+            lambda state: can_swim(state, player, world),
+        "Public Pool - Third Apple Group Near Shallow Pool Second Palm Tree 3":
+            lambda state: can_swim(state, player, world),
 
         "Bathhouse - Bone Above Middle Bathhouse":
             lambda state: can_swim(state, player, world)
@@ -1319,6 +1387,26 @@ def get_location_rules(player, world):
                           and (state.has("Key", player, 7) or state.has("Tadpole HQ Key", player)),
         "Tadpole HQ - Apple On Xylophone":
             lambda state: can_swim(state, player, world),
+        "Tadpole HQ - Bug Near Fischer 1":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Fischer 2":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Fischer 3":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Fischer 4":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Apple Behind Bench Near Fischer":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Fischer's Pond":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Apple Behind Fischer Towards Rocks":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Rocks Behind Fischer 1":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Bug Near Rocks Behind Fischer 2":
+            lambda state: can_swim(state, player, world, True),
+        "Tadpole HQ - Behind Fischer On A Rock":
+            lambda state: can_swim(state, player, world, True),
 
         "Home - Give High Frog Lunchbox":
             lambda state: has_textbox(state, player, world, "Home"),
@@ -1362,7 +1450,8 @@ def get_location_rules(player, world):
         "Bathhouse - Game Kid":
             lambda state: has_textbox(state, player, world, "Bathhouse"),
         "Bathhouse - Handsome Frog":
-            lambda state: has_textbox(state, player, world, "Bathhouse"),
+            lambda state: has_textbox(state, player, world, "Bathhouse")
+                          and (can_soda(state, player, world) or can_ac(state, player, world)),
         "Bathhouse - LONG VOLLEY":
             lambda state: has_textbox(state, player, world, "Bathhouse"),
         "Bathhouse - Nina":
@@ -1860,6 +1949,7 @@ def get_location_rules(player, world):
                               and has_textbox(state, player, world, "Public Pool"))
                           or (state.has("Bathhouse Ticket", player)
                               and has_textbox(state, player, world, "Bathhouse"))
+                              and (can_soda(state, player, world) or can_ac(state, player, world))
                           or (state.has("Tadpole HQ Ticket", player)
                               and has_textbox(state, player, world, "Tadpole HQ"))
                           or (has_access_garden(state, player, world)
