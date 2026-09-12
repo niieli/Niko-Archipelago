@@ -834,13 +834,11 @@ def get_location_rules(player, world):
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
         "Mitch/Mai - 13":
             lambda state: (has_enough_cassettes(state, player, 13)
-                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 12))
-                          #and debug_mitch_mai(state) >= 12
+                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 13))
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
         "Mitch/Mai - 14":
             lambda state: (has_enough_cassettes(state, player, 14)
-                          )
-                          and (debug_mitch_mai(state) >= 13)
+                          and (sum(func(state) for func in MitchMaiProgressiveList) >= 14))
                           and (options.textbox.value != 1 or state.has("Textbox", player)),
 
         "Hairball City - Apple On Frog Statue Island Pier 1":
