@@ -434,6 +434,7 @@ def get_location_rules(player, world):
                           and state.has("Public Pool Ticket", player)
                           and state.has("Bathhouse Ticket", player)
                           and state.has("Tadpole HQ Ticket", player)
+                          and has_textbox(state, player, world, "Tadpole HQ")
                           and has_enough_coins(state, player, world.kiosk_cost["Elevator"])
                           and can_soda(state, player, world)
                           and can_parasol(state, player, world),
