@@ -105,6 +105,7 @@ def has_access_garden(state: CollectionState, player, world):
         return (state.has("Gary's Garden Ticket", player)
                 and state.has("Tadpole HQ Ticket", player)
                 and (has_textbox(state, player, world, "Tadpole HQ"))
+                and (has_textbox(state, player, world, "Gary's Garden"))
                 and can_swim(state, player, world))
     elif access_option == 2:
         return (state.has("Gary's Garden Ticket", player)
@@ -112,6 +113,7 @@ def has_access_garden(state: CollectionState, player, world):
     else:
         return (state.has("Tadpole HQ Ticket", player)
                 and (has_textbox(state, player, world, "Tadpole HQ"))
+                and (has_textbox(state, player, world, "Gary's Garden"))
                 and can_swim(state, player, world))
 
 
@@ -1448,6 +1450,9 @@ def get_location_rules(player, world):
         "Bathhouse - Game Kid":
             lambda state: has_textbox(state, player, world, "Bathhouse"),
         "Bathhouse - Handsome Frog":
+            lambda state: has_textbox(state, player, world, "Bathhouse")
+                          and (can_soda(state, player, world) or can_ac(state, player, world)),
+        "Bathhouse - Handsome Frog (Chatsanity)":
             lambda state: has_textbox(state, player, world, "Bathhouse")
                           and (can_soda(state, player, world) or can_ac(state, player, world)),
         "Bathhouse - LONG VOLLEY":
