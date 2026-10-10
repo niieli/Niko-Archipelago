@@ -905,6 +905,9 @@ def get_location_rules(player, world):
 
         "Hairball City - Big Umbrella":
             lambda state: can_parasol(state, player, world),
+        "Hairball City - Above Tree Near Gabi":
+            lambda state: (can_parasol(state, player, world)
+                          or (world.options.precisejumps.value == 1)),
         "Hairball City - Palm Tree":
             lambda state: can_parasol(state, player, world),
         "Hairball City - Bug On Tall Palm Tree Platform 1":
